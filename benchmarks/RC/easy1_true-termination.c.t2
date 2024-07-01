@@ -1,0 +1,163 @@
+START: 1001;
+BUCHI: {7002, 34002};
+CUTPOINT: {1001, 34001, 7001, 7002, 34002};
+PRE: {y>=-64 && y<=63 && x>=-64 && x<=63 && z>=-64 && z<=63 };
+
+
+FROM: 1001;
+assume(x<0);
+x := 0;
+y := 100 * 1;
+z := z;
+TO: 7001;
+
+FROM: 1001;
+assume(x>=0);
+x := 0;
+y := 100 * 1;
+z := z;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * z>=0 && z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * z>=0 && z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * z>=0 && z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7002;
+assume(-1 * z>=0 && z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7002;
+assume(-1 * 1  +  z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x<0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7001;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * z>=0 && 39 * 1  +  -1 * x>=0);
+assume(x>=0);
+x := 2 * 1  +  x;
+y := y;
+z := z;
+TO: 7002;
+
+FROM: 7001;
+assume(-40 * 1  +  x>=0);
+assume(x<0);
+x := x;
+y := y;
+z := z;
+TO: 34001;
+
+FROM: 7001;
+assume(-40 * 1  +  x>=0);
+assume(x>=0);
+x := x;
+y := y;
+z := z;
+TO: 34002;
+
+FROM: 7002;
+assume(-40 * 1  +  x>=0);
+assume(x<0);
+x := x;
+y := y;
+z := z;
+TO: 34001;
+
+FROM: 7002;
+assume(-40 * 1  +  x>=0);
+assume(x>=0);
+x := x;
+y := y;
+z := z;
+TO: 34002;
+
+FROM: 34001;
+assume(x<0);
+TO: 34001;
+
+FROM: 34001;
+assume(x>=0);
+TO: 34002;
+
+FROM: 34002;
+assume(x<0);
+TO: 34001;
+
+FROM: 34002;
+assume(x>=0);
+TO: 34002;

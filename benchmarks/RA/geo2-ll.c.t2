@@ -1,0 +1,106 @@
+START: 1001;
+BUCHI: {38002};
+CUTPOINT: {38003, 10003, 38002, 1001, 10001, 38001};
+
+PRE: {c>=0 && c<=64 && x>=0 && x<=64 && y>=0 && y<=64 && z>=0 && z<=64 && k>=0 && k<=64  && 1>=0};
+
+FROM: 1001;
+assume(c>=0);
+c := 1;
+x := 1;
+y := 1;
+z := z;
+k := k;
+TO: 10001;
+
+FROM: 1001;
+assume(c<0);
+c := 1;
+x := 1;
+y := 1;
+z := z;
+k := k;
+TO: 10003;
+
+FROM: 10001;
+assume(1 + x*z - x - z*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c>=0);
+c := 1  +  c;
+x := 1  +  x * z;
+y := y * z;
+z := z;
+k := k;
+TO: 10001;
+
+FROM: 10001;
+assume(1 + x*z - x - z*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c<0);
+c := 1  +  c;
+x := 1  +  x * z;
+y := y * z;
+z := z;
+k := k;
+TO: 10003;
+
+FROM: 10003;
+assume(1 + x*z - x - z*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+c := 1  +  c;
+x := 1  +  x * z;
+y := y * z;
+z := z;
+k := k;
+TO: 10003;
+
+FROM: 10001;
+assume(1 + x*z - x - z*y == 0);
+assume(c  +  -1 * k>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := y;
+z := z;
+k := k;
+TO: 38001;
+
+FROM: 10001;
+assume(1 + x*z - x - z*y == 0);
+assume(c  +  -1 * k>=0);
+assume(c<0);
+c := c;
+x := x;
+y := y;
+z := z;
+k := k;
+TO: 38003;
+
+FROM: 10003;
+assume(1 + x*z - x - z*y == 0);
+assume(c  +  -1 * k>=0);
+c := c;
+x := x;
+y := y;
+z := z;
+k := k;
+TO: 38003;
+
+FROM: 38001;
+assume(c>=0);
+TO: 38002;
+
+FROM: 38002;
+assume(c>=0);
+TO: 38002;
+
+FROM: 38001;
+assume(c<0);
+TO: 38003;
+
+FROM: 38002;
+assume(c<0);
+TO: 38003;
+
+FROM: 38003;
+TO: 38003;

@@ -1,0 +1,167 @@
+START: 1001;
+BUCHI: {22001, 1001, 49001};
+CUTPOINT: {1001, 22001, 49002, 1002, 49001, 22002};
+PRE: {xtmp>=-64 && xtmp<=63 && y>=-64 && y<=63 && x>=-64 && x<=63 && tmp>=-64 && tmp<=63 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 22001;
+
+FROM: 1001;
+assume(-1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<-64 || tmp>63);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 22002;
+
+FROM: 1002;
+assume(-1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 22002;
+
+FROM: 1001;
+assume(-1 * y>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49001;
+
+FROM: 1001;
+assume(-1 * y>=0);
+assume(tmp<-64 || tmp>63);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49002;
+
+FROM: 1002;
+assume(-1 * y>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49002;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49001;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(tmp<-64 || tmp>63);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49002;
+
+FROM: 1002;
+assume(-1 * x>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 49002;
+
+FROM: 22001;
+assume(xtmp  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 22001;
+
+FROM: 22001;
+assume(xtmp  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(tmp<-64 || tmp>63);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 22002;
+
+FROM: 22002;
+assume(xtmp  +  -1 * y>=0 && -1 * 1  +  y>=0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 22002;
+
+FROM: 22001;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1001;
+
+FROM: 22001;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+assume(tmp<-64 || tmp>63);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1002;
+
+FROM: 22002;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1002;
+
+FROM: 22001;
+assume(-1 * y>=0);
+assume(tmp>=-64 && tmp<=63);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1001;
+
+FROM: 22001;
+assume(-1 * y>=0);
+assume(tmp<-64 || tmp>63);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1002;
+
+FROM: 22002;
+assume(-1 * y>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1002;
+
+FROM: 49001;
+TO: 49002;
+
+FROM: 49002;
+TO: 49002;

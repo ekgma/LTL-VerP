@@ -1,0 +1,234 @@
+START: 1000;
+BUCHI: {52000, 1000, 20000};
+CUTPOINT: {1000, 52000, 20001, 20000, 52001};
+PRE: {maxId>=-64 && maxId<=63 && tmp>=-64 && tmp<=63 && id>=-64 && id<=63 };
+
+
+FROM: 1000;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20000;
+
+FROM: 1000;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20001;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 1000;
+assume(id  +  -1 * maxId>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52000;
+
+FROM: 1000;
+assume(id  +  -1 * maxId>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 20000;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20000;
+
+FROM: 20000;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=1);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20000;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20000;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20000;
+
+FROM: 20000;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=1);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20000;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20000;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20000;
+
+FROM: 20000;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=1);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20000;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20000;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=-4);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20000;
+
+FROM: 20000;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=1);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20000;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20000;
+assume(id>=-4);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52000;
+
+FROM: 20000;
+assume(id<=-5);
+assume(id<=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 20001;
+assume(id>=1);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52000;
+
+FROM: 20001;
+assume(id<=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 52000;
+assume(id>=-4);
+TO: 52000;
+
+FROM: 52000;
+assume(id<=-5);
+assume(id<=0);
+TO: 52001;
+
+FROM: 52001;
+assume(id>=1);
+TO: 52000;
+
+FROM: 52001;
+assume(id<=0);
+TO: 52001;

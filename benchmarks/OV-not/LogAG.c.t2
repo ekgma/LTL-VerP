@@ -1,0 +1,131 @@
+START: 1001;
+BUCHI: {19001, 1001, 45001, 4001};
+CUTPOINT: {1001, 45001, 19001, 45002, 19002, 4001, 4002};
+PRE: {xtmp>=-64 && xtmp<=63 && restmp>=-64 && restmp<=63 && res>=-64 && res<=63 && x>=-64 && x<=63 };
+
+
+FROM: 1001;
+assume(res>=-64 && res<=63);
+res := 0;
+xtmp := xtmp;
+x := x;
+restmp := restmp;
+TO: 4001;
+
+FROM: 1001;
+assume(res<-64 || res>63);
+res := 0;
+xtmp := xtmp;
+x := x;
+restmp := restmp;
+TO: 4002;
+
+FROM: 19001;
+assume(-2 * 1  +  xtmp>=0);
+assume(res>=-64 && res<=63);
+res := res;
+xtmp := -2 * 1  +  xtmp;
+x := x;
+restmp := 1  +  restmp;
+TO: 19001;
+
+FROM: 19001;
+assume(-2 * 1  +  xtmp>=0);
+assume(res<-64 || res>63);
+res := res;
+xtmp := -2 * 1  +  xtmp;
+x := x;
+restmp := 1  +  restmp;
+TO: 19002;
+
+FROM: 19002;
+assume(-2 * 1  +  xtmp>=0);
+res := res;
+xtmp := -2 * 1  +  xtmp;
+x := x;
+restmp := 1  +  restmp;
+TO: 19002;
+
+FROM: 19001;
+assume(1  +  -1 * xtmp>=0);
+assume(res>=-64 && res<=63);
+res := 1  +  res;
+xtmp := xtmp;
+x := 1  +  xtmp;
+restmp := restmp;
+TO: 4001;
+
+FROM: 19001;
+assume(1  +  -1 * xtmp>=0);
+assume(res<-64 || res>63);
+res := 1  +  res;
+xtmp := xtmp;
+x := 1  +  xtmp;
+restmp := restmp;
+TO: 4002;
+
+FROM: 19002;
+assume(1  +  -1 * xtmp>=0);
+res := 1  +  res;
+xtmp := xtmp;
+x := 1  +  xtmp;
+restmp := restmp;
+TO: 4002;
+
+FROM: 4001;
+assume(-2 * 1  +  x>=0);
+assume(res>=-64 && res<=63);
+res := res;
+xtmp := -2 * 1  +  x;
+x := x;
+restmp := 0;
+TO: 19001;
+
+FROM: 4001;
+assume(-2 * 1  +  x>=0);
+assume(res<-64 || res>63);
+res := res;
+xtmp := -2 * 1  +  x;
+x := x;
+restmp := 0;
+TO: 19002;
+
+FROM: 4002;
+assume(-2 * 1  +  x>=0);
+res := res;
+xtmp := -2 * 1  +  x;
+x := x;
+restmp := 0;
+TO: 19002;
+
+FROM: 4001;
+assume(1  +  -1 * x>=0);
+assume(res>=-64 && res<=63);
+res := res;
+xtmp := xtmp;
+x := x;
+restmp := restmp;
+TO: 45001;
+
+FROM: 4001;
+assume(1  +  -1 * x>=0);
+assume(res<-64 || res>63);
+res := res;
+xtmp := xtmp;
+x := x;
+restmp := restmp;
+TO: 45002;
+
+FROM: 4002;
+assume(1  +  -1 * x>=0);
+res := res;
+xtmp := xtmp;
+x := x;
+restmp := restmp;
+TO: 45002;
+
+FROM: 45001;
+TO: 45002;
+
+FROM: 45002;
+TO: 45002;

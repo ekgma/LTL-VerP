@@ -1,0 +1,240 @@
+START: 1001;
+BUCHI: {52004, 20002, 20004, 52002};
+CUTPOINT: {52005, 52004, 20002, 52003, 20003, 20004, 1001, 52002};
+PRE: {id>=0 && id<=64 && maxId>=0 && maxId<=64 && tmp>=0 && tmp<=64 };
+
+
+FROM: 1001;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20002;
+
+FROM: 1001;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20003;
+
+FROM: 1001;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20004;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52004;
+
+FROM: 1001;
+assume(id  +  -1 * maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 1001;
+assume(id  +  -1 * maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52003;
+
+FROM: 1001;
+assume(id  +  -1 * maxId>=0);
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52004;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20003;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20003;
+
+FROM: 20003;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20004;
+
+FROM: 20004;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20004;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20003;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20003;
+
+FROM: 20003;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20004;
+
+FROM: 20004;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20004;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20003;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20003;
+
+FROM: 20003;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20004;
+
+FROM: 20004;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20004;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20003;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20003;
+
+FROM: 20003;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20004;
+
+FROM: 20004;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20004;
+
+FROM: 20002;
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 20003;
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52003;
+
+FROM: 20003;
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52004;
+
+FROM: 20004;
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52004;
+
+FROM: 52002;
+TO: 52005;
+
+FROM: 52005;
+TO: 52005;
+
+FROM: 52003;
+assume(id>=0);
+TO: 52003;
+
+FROM: 52003;
+assume(id<0);
+TO: 52004;
+
+FROM: 52004;
+TO: 52004;

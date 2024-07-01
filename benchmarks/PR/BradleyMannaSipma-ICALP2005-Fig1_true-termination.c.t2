@@ -1,0 +1,223 @@
+START: 1000;
+BUCHI: {1000, 74000, 37000};
+CUTPOINT: {1000, 74000, 74001, 37000, 37001};
+PRE: {x>=-64 && x<=63 && N>=-64 && N<=63 && y>=-64 && y<=63 };
+
+
+FROM: 1000;
+assume(x  +  y>=0 && 536870911 * 1  +  -1 * N>=0 && 536870911 * 1  +  -1 * x>=0 && 536870911 * 1  +  -1 * y>=0 && 1073741824 * 1  +  x>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 37000;
+
+FROM: 1000;
+assume(x  +  y>=0 && 536870911 * 1  +  -1 * N>=0 && 536870911 * 1  +  -1 * x>=0 && 536870911 * 1  +  -1 * y>=0 && 1073741824 * 1  +  x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 37001;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * x  +  -1 * y>=0 && 536870911 * 1  +  -1 * N>=0 && 536870911 * 1  +  -1 * x>=0 && 536870911 * 1  +  -1 * y>=0 && 1073741824 * 1  +  x>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * x  +  -1 * y>=0 && 536870911 * 1  +  -1 * N>=0 && 536870911 * 1  +  -1 * x>=0 && 536870911 * 1  +  -1 * y>=0 && 1073741824 * 1  +  x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 1000;
+assume(-536870912 * 1  +  N>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 1000;
+assume(-536870912 * 1  +  N>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 1000;
+assume(-536870912 * 1  +  x>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 1000;
+assume(-536870912 * 1  +  x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 1000;
+assume(-536870912 * 1  +  y>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 1000;
+assume(-536870912 * 1  +  y>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 1000;
+assume(-1073741825 * 1  +  -1 * x>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 1000;
+assume(-1073741825 * 1  +  -1 * x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 37000;
+assume(N  +  -1 * x>=0);
+assume(N>=-4);
+x := 2 * x  +  y;
+y := 1  +  y;
+N := N;
+TO: 37000;
+
+FROM: 37000;
+assume(N  +  -1 * x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := 2 * x  +  y;
+y := 1  +  y;
+N := N;
+TO: 37001;
+
+FROM: 37001;
+assume(N  +  -1 * x>=0);
+assume(N>=1);
+x := 2 * x  +  y;
+y := 1  +  y;
+N := N;
+TO: 37000;
+
+FROM: 37001;
+assume(N  +  -1 * x>=0);
+assume(N<=0);
+x := 2 * x  +  y;
+y := 1  +  y;
+N := N;
+TO: 37001;
+
+FROM: 37000;
+assume(N  +  -1 * x>=0);
+assume(N>=-4);
+x := 1  +  x;
+y := y;
+N := N;
+TO: 37000;
+
+FROM: 37000;
+assume(N  +  -1 * x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := 1  +  x;
+y := y;
+N := N;
+TO: 37001;
+
+FROM: 37001;
+assume(N  +  -1 * x>=0);
+assume(N>=1);
+x := 1  +  x;
+y := y;
+N := N;
+TO: 37000;
+
+FROM: 37001;
+assume(N  +  -1 * x>=0);
+assume(N<=0);
+x := 1  +  x;
+y := y;
+N := N;
+TO: 37001;
+
+FROM: 37000;
+assume(-1 * 1  +  -1 * N  +  x>=0);
+assume(N>=-4);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 37000;
+assume(-1 * 1  +  -1 * N  +  x>=0);
+assume(N<=-5);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 37001;
+assume(-1 * 1  +  -1 * N  +  x>=0);
+assume(N>=1);
+x := x;
+y := y;
+N := N;
+TO: 74000;
+
+FROM: 37001;
+assume(-1 * 1  +  -1 * N  +  x>=0);
+assume(N<=0);
+x := x;
+y := y;
+N := N;
+TO: 74001;
+
+FROM: 74000;
+assume(N>=-4);
+TO: 74000;
+
+FROM: 74000;
+assume(N<=-5);
+assume(N<=0);
+TO: 74001;
+
+FROM: 74001;
+assume(N>=1);
+TO: 74000;
+
+FROM: 74001;
+assume(N<=0);
+TO: 74001;

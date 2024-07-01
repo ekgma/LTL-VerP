@@ -1,0 +1,160 @@
+START: 1001;
+BUCHI: {15002, 15004, 45002, 45004};
+CUTPOINT: {15002, 45005, 15004, 1001, 45003, 45002, 15003, 45004};
+PRE: {x>=0 && x<=64 && a>=0 && a<=64 && max>=0 && max<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  max>=0);
+assume(a>=0);
+a := 0;
+max := max;
+x := 1;
+TO: 15002;
+
+FROM: 1001;
+assume(-1 * 1  +  max>=0);
+assume(a>=0);
+a := 0;
+max := max;
+x := 1;
+TO: 15003;
+
+FROM: 1001;
+assume(-1 * 1  +  max>=0);
+assume(a<0);
+a := 0;
+max := max;
+x := 1;
+TO: 15004;
+
+FROM: 1001;
+assume(-1 * max>=0);
+assume(a>=0);
+a := a;
+max := max;
+x := x;
+TO: 45002;
+
+FROM: 1001;
+assume(-1 * max>=0);
+assume(a>=0);
+a := a;
+max := max;
+x := x;
+TO: 45003;
+
+FROM: 1001;
+assume(-1 * max>=0);
+assume(a<0);
+a := a;
+max := max;
+x := x;
+TO: 45004;
+
+FROM: 15002;
+assume(max  +  -1 * x>=0);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15003;
+assume(max  +  -1 * x>=0);
+assume(a>=0);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15003;
+
+FROM: 15003;
+assume(max  +  -1 * x>=0);
+assume(a<0);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15004;
+
+FROM: 15004;
+assume(max  +  -1 * x>=0);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15004;
+
+FROM: 15002;
+assume(max  +  -1 * x>=0);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15003;
+assume(max  +  -1 * x>=0);
+assume(a>=0);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15003;
+
+FROM: 15003;
+assume(max  +  -1 * x>=0);
+assume(a<0);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15004;
+
+FROM: 15004;
+assume(max  +  -1 * x>=0);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15004;
+
+FROM: 15002;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+a := a;
+max := max;
+x := x;
+TO: 45002;
+
+FROM: 15003;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+assume(a>=0);
+a := a;
+max := max;
+x := x;
+TO: 45003;
+
+FROM: 15003;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+assume(a<0);
+a := a;
+max := max;
+x := x;
+TO: 45004;
+
+FROM: 15004;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+a := a;
+max := max;
+x := x;
+TO: 45004;
+
+FROM: 45002;
+TO: 45005;
+
+FROM: 45005;
+TO: 45005;
+
+FROM: 45003;
+assume(a>=0);
+TO: 45003;
+
+FROM: 45003;
+assume(a<0);
+TO: 45004;
+
+FROM: 45004;
+TO: 45004;

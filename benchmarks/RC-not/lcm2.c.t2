@@ -1,0 +1,332 @@
+START: 1001;
+BUCHI: {13002, 48002};
+CUTPOINT: {48001, 48002, 13003, 1001, 13001, 13002, 48003};
+
+PRE: {b>=-64 && b<=63 && x>=-64 && x<=63 && v>=-64 && v<=63 && y>=-64 && y<=63 && a>=-64 && a<=63 && u>=-64 && u<=63  && a>=1 && b>=1};
+
+FROM: 1001;
+a := a;
+b := b;
+u := b;
+v := a;
+x := a;
+y := b;
+TO: 13001;
+
+FROM: 1001;
+assume(a<0);
+a := a;
+b := b;
+u := b;
+v := a;
+x := a;
+y := b;
+TO: 13002;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13001;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13003;
+
+FROM: 13003;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13003;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13001;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+assume(a>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13003;
+
+FROM: 13003;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13003;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13001;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(a>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13003;
+
+FROM: 13003;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * 1  +  x  +  -1 * y>=0);
+a := a;
+b := b;
+u := u;
+v := u  +  v;
+x := x  +  -1 * y;
+y := y;
+TO: 13003;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  x  +  -1 * y>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13001;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  x  +  -1 * y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  x  +  -1 * y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  x  +  -1 * y>=0);
+assume(a>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13003;
+
+FROM: 13003;
+assume(x*u + y*v == 2*a*b);
+assume(-1 * x  +  y>=0 && -1 * 1  +  x  +  -1 * y>=0);
+a := a;
+b := b;
+u := u  +  v;
+v := v;
+x := x;
+y := -1 * x  +  y;
+TO: 13003;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(x  +  -1 * y>=0 && -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u;
+v := v;
+x := x;
+y := y;
+TO: 48001;
+
+FROM: 13001;
+assume(x*u + y*v == 2*a*b);
+assume(x  +  -1 * y>=0 && -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := v;
+x := x;
+y := y;
+TO: 48002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(x  +  -1 * y>=0 && -1 * x  +  y>=0);
+assume(a<0);
+a := a;
+b := b;
+u := u;
+v := v;
+x := x;
+y := y;
+TO: 48002;
+
+FROM: 13002;
+assume(x*u + y*v == 2*a*b);
+assume(x  +  -1 * y>=0 && -1 * x  +  y>=0);
+assume(a>=0);
+a := a;
+b := b;
+u := u;
+v := v;
+x := x;
+y := y;
+TO: 48003;
+
+FROM: 13003;
+assume(x*u + y*v == 2*a*b);
+assume(x  +  -1 * y>=0 && -1 * x  +  y>=0);
+a := a;
+b := b;
+u := u;
+v := v;
+x := x;
+y := y;
+TO: 48003;
+
+FROM: 48001;
+TO: 48001;
+
+FROM: 48001;
+assume(a<0);
+TO: 48002;
+
+FROM: 48002;
+assume(a<0);
+TO: 48002;
+
+FROM: 48002;
+assume(a>=0);
+TO: 48003;
+
+FROM: 48003;
+TO: 48003;

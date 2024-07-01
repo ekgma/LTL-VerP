@@ -1,0 +1,170 @@
+START: 1001;
+BUCHI: {45002, 17002};
+CUTPOINT: {45003, 17003, 45001, 17001, 45002, 1001, 17002};
+
+PRE: {az>=-64 && az<=63 && z>=-64 && z<=63 && a>=-64 && a<=63 && k>=-64 && k<=63 && y>=-64 && y<=63 && c>=-64 && c<=63 && x>=-64 && x<=63  && 1>=0};
+
+FROM: 1001;
+a := a;
+c := 1;
+x := a;
+y := 1;
+az := a * z;
+z := z;
+k := k;
+TO: 17001;
+
+FROM: 1001;
+assume(a<0);
+a := a;
+c := 1;
+x := a;
+y := 1;
+az := a * z;
+z := z;
+k := k;
+TO: 17002;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17001;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a<0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17002;
+
+FROM: 17002;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a<0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17002;
+
+FROM: 17002;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a>=0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17003;
+
+FROM: 17003;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17003;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45001;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a<0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45002;
+
+FROM: 17002;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a<0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45002;
+
+FROM: 17002;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a>=0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45003;
+
+FROM: 17003;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45003;
+
+FROM: 45001;
+TO: 45001;
+
+FROM: 45001;
+assume(a<0);
+TO: 45002;
+
+FROM: 45002;
+assume(a<0);
+TO: 45002;
+
+FROM: 45002;
+assume(a>=0);
+TO: 45003;
+
+FROM: 45003;
+TO: 45003;

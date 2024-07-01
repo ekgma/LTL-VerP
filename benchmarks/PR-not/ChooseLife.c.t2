@@ -1,0 +1,216 @@
+START: 1000;
+BUCHI: {10001, 50001};
+CUTPOINT: {50002, 1000, 10002, 50000, 10000, 10001, 50001};
+PRE: {death>=-64 && death<=63 && choose>=-64 && choose<=63 && temp>=-64 && temp<=63 && life>=-64 && life<=63 };
+
+
+FROM: 1000;
+temp := temp;
+death := 17 * 1;
+choose := 2 * 1;
+life := 13 * 1;
+TO: 10000;
+
+FROM: 1000;
+assume(choose<-5);
+assume(choose<=0);
+temp := temp;
+death := 17 * 1;
+choose := 2 * 1;
+life := 13 * 1;
+TO: 10001;
+
+FROM: 10000;
+assume(-1 * 1  +  -1 * choose  +  death>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10000;
+
+FROM: 10000;
+assume(-1 * 1  +  -1 * choose  +  death>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<-5);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10001;
+
+FROM: 10001;
+assume(-1 * 1  +  -1 * choose  +  death>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10001;
+
+FROM: 10001;
+assume(-1 * 1  +  -1 * choose  +  death>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose>0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10002;
+
+FROM: 10002;
+assume(-1 * 1  +  -1 * choose  +  death>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10002;
+
+FROM: 10000;
+assume(0 * 1  +  -1 * choose  +  life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10000;
+
+FROM: 10000;
+assume(0 * 1  +  -1 * choose  +  life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<-5);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10001;
+
+FROM: 10001;
+assume(0 * 1  +  -1 * choose  +  life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10001;
+
+FROM: 10001;
+assume(0 * 1  +  -1 * choose  +  life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose>0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10002;
+
+FROM: 10002;
+assume(0 * 1  +  -1 * choose  +  life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := choose;
+TO: 10002;
+
+FROM: 10000;
+assume(choose  +  -1 * death>=0 && -1 * 1  +  choose  +  -1 * life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := death;
+TO: 10000;
+
+FROM: 10000;
+assume(choose  +  -1 * death>=0 && -1 * 1  +  choose  +  -1 * life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<-5);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := death;
+TO: 10001;
+
+FROM: 10001;
+assume(choose  +  -1 * death>=0 && -1 * 1  +  choose  +  -1 * life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose<=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := death;
+TO: 10001;
+
+FROM: 10001;
+assume(choose  +  -1 * death>=0 && -1 * 1  +  choose  +  -1 * life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+assume(choose>0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := death;
+TO: 10002;
+
+FROM: 10002;
+assume(choose  +  -1 * death>=0 && -1 * 1  +  choose  +  -1 * life>=0 && -1 * 1  +  death  +  -1 * life>=0);
+temp := death;
+death := 1  +  life;
+choose := choose;
+life := death;
+TO: 10002;
+
+FROM: 10000;
+assume(-1 * death  +  life>=0);
+temp := temp;
+death := death;
+choose := choose;
+life := life;
+TO: 50000;
+
+FROM: 10000;
+assume(-1 * death  +  life>=0);
+assume(choose<-5);
+assume(choose<=0);
+temp := temp;
+death := death;
+choose := choose;
+life := life;
+TO: 50001;
+
+FROM: 10001;
+assume(-1 * death  +  life>=0);
+assume(choose<=0);
+temp := temp;
+death := death;
+choose := choose;
+life := life;
+TO: 50001;
+
+FROM: 10001;
+assume(-1 * death  +  life>=0);
+assume(choose>0);
+temp := temp;
+death := death;
+choose := choose;
+life := life;
+TO: 50002;
+
+FROM: 10002;
+assume(-1 * death  +  life>=0);
+temp := temp;
+death := death;
+choose := choose;
+life := life;
+TO: 50002;
+
+FROM: 50000;
+TO: 50000;
+
+FROM: 50000;
+assume(choose<-5);
+assume(choose<=0);
+TO: 50001;
+
+FROM: 50001;
+assume(choose<=0);
+TO: 50001;
+
+FROM: 50001;
+assume(choose>0);
+TO: 50002;
+
+FROM: 50002;
+TO: 50002;

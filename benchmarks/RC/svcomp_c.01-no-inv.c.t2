@@ -1,0 +1,163 @@
+START: 1001;
+BUCHI: {4002, 15002, 40002};
+CUTPOINT: {1001, 15002, 4001, 40001, 15001, 4002, 40002};
+PRE: {c>=-64 && c<=63 && x>=-64 && x<=63 && y>=-64 && y<=63 };
+
+
+FROM: 1001;
+assume(c<0);
+c := 0;
+x := x;
+y := y;
+TO: 4001;
+
+FROM: 1001;
+assume(c>=0);
+c := 0;
+x := x;
+y := y;
+TO: 4002;
+
+FROM: 15001;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(c<0);
+c := 1  +  c;
+x := x;
+y := 2 * y;
+TO: 15001;
+
+FROM: 15001;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(c>=0);
+c := 1  +  c;
+x := x;
+y := 2 * y;
+TO: 15002;
+
+FROM: 15002;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(c<0);
+c := 1  +  c;
+x := x;
+y := 2 * y;
+TO: 15001;
+
+FROM: 15002;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(c>=0);
+c := 1  +  c;
+x := x;
+y := 2 * y;
+TO: 15002;
+
+FROM: 15001;
+assume(-1 * x  +  y>=0);
+assume(c<0);
+c := c;
+x := -1 * 1  +  x;
+y := y;
+TO: 4001;
+
+FROM: 15001;
+assume(-1 * x  +  y>=0);
+assume(c>=0);
+c := c;
+x := -1 * 1  +  x;
+y := y;
+TO: 4002;
+
+FROM: 15002;
+assume(-1 * x  +  y>=0);
+assume(c<0);
+c := c;
+x := -1 * 1  +  x;
+y := y;
+TO: 4001;
+
+FROM: 15002;
+assume(-1 * x  +  y>=0);
+assume(c>=0);
+c := c;
+x := -1 * 1  +  x;
+y := y;
+TO: 4002;
+
+FROM: 4001;
+assume(x>=0);
+assume(c<0);
+c := c;
+x := x;
+y := 1;
+TO: 15001;
+
+FROM: 4001;
+assume(x>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := 1;
+TO: 15002;
+
+FROM: 4002;
+assume(x>=0);
+assume(c<0);
+c := c;
+x := x;
+y := 1;
+TO: 15001;
+
+FROM: 4002;
+assume(x>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := 1;
+TO: 15002;
+
+FROM: 4001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(c<0);
+c := c;
+x := x;
+y := y;
+TO: 40001;
+
+FROM: 4001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := y;
+TO: 40002;
+
+FROM: 4002;
+assume(-1 * 1  +  -1 * x>=0);
+assume(c<0);
+c := c;
+x := x;
+y := y;
+TO: 40001;
+
+FROM: 4002;
+assume(-1 * 1  +  -1 * x>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := y;
+TO: 40002;
+
+FROM: 40001;
+assume(c<0);
+TO: 40001;
+
+FROM: 40001;
+assume(c>=0);
+TO: 40002;
+
+FROM: 40002;
+assume(c<0);
+TO: 40001;
+
+FROM: 40002;
+assume(c>=0);
+TO: 40002;

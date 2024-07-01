@@ -1,0 +1,248 @@
+START: 1000;
+BUCHI: {46001, 29001, 1001, 9001};
+CUTPOINT: {29001, 29000, 1002, 9001, 46002, 1000, 29002, 9002, 1001, 46000, 46001, 9000};
+PRE: {x>=-64 && x<=63 && n>=-64 && n<=63 && y>=-64 && y<=63 };
+
+
+FROM: 1000;
+assume(x>=0);
+x := x;
+y := y;
+n := n;
+TO: 9000;
+
+FROM: 1000;
+assume(x>=0);
+assume(n<-5);
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 9001;
+
+FROM: 1001;
+assume(x>=0);
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 9001;
+
+FROM: 1001;
+assume(x>=0);
+assume(n>0);
+x := x;
+y := y;
+n := n;
+TO: 9002;
+
+FROM: 1002;
+assume(x>=0);
+x := x;
+y := y;
+n := n;
+TO: 9002;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * x>=0);
+x := x;
+y := y;
+n := n;
+TO: 46000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * x>=0);
+assume(n<-5);
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 46001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 46001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(n>0);
+x := x;
+y := y;
+n := n;
+TO: 46002;
+
+FROM: 1002;
+assume(-1 * 1  +  -1 * x>=0);
+x := x;
+y := y;
+n := n;
+TO: 46002;
+
+FROM: 9000;
+assume(y>=0);
+x := x;
+y := -1 * 1  +  y;
+n := n;
+TO: 9000;
+
+FROM: 9000;
+assume(y>=0);
+assume(n<-5);
+assume(n<=0);
+x := x;
+y := -1 * 1  +  y;
+n := n;
+TO: 9001;
+
+FROM: 9001;
+assume(y>=0);
+assume(n<=0);
+x := x;
+y := -1 * 1  +  y;
+n := n;
+TO: 9001;
+
+FROM: 9001;
+assume(y>=0);
+assume(n>0);
+x := x;
+y := -1 * 1  +  y;
+n := n;
+TO: 9002;
+
+FROM: 9002;
+assume(y>=0);
+x := x;
+y := -1 * 1  +  y;
+n := n;
+TO: 9002;
+
+FROM: 9000;
+x := -1 * 1  +  x;
+y := y;
+n := n;
+TO: 29000;
+
+FROM: 9000;
+assume(n<-5);
+assume(n<=0);
+x := -1 * 1  +  x;
+y := y;
+n := n;
+TO: 29001;
+
+FROM: 9001;
+assume(n<=0);
+x := -1 * 1  +  x;
+y := y;
+n := n;
+TO: 29001;
+
+FROM: 9001;
+assume(n>0);
+x := -1 * 1  +  x;
+y := y;
+n := n;
+TO: 29002;
+
+FROM: 9002;
+x := -1 * 1  +  x;
+y := y;
+n := n;
+TO: 29002;
+
+FROM: 29000;
+assume(n  +  -1 * y>=0);
+x := x;
+y := 1  +  y;
+n := n;
+TO: 29000;
+
+FROM: 29000;
+assume(n  +  -1 * y>=0);
+assume(n<-5);
+assume(n<=0);
+x := x;
+y := 1  +  y;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(n  +  -1 * y>=0);
+assume(n<=0);
+x := x;
+y := 1  +  y;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(n  +  -1 * y>=0);
+assume(n>0);
+x := x;
+y := 1  +  y;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(n  +  -1 * y>=0);
+x := x;
+y := 1  +  y;
+n := n;
+TO: 29002;
+
+FROM: 29000;
+x := x;
+y := y;
+n := n;
+TO: 1000;
+
+FROM: 29000;
+assume(n<-5);
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 1001;
+
+FROM: 29001;
+assume(n<=0);
+x := x;
+y := y;
+n := n;
+TO: 1001;
+
+FROM: 29001;
+assume(n>0);
+x := x;
+y := y;
+n := n;
+TO: 1002;
+
+FROM: 29002;
+x := x;
+y := y;
+n := n;
+TO: 1002;
+
+FROM: 46000;
+TO: 46000;
+
+FROM: 46000;
+assume(n<-5);
+assume(n<=0);
+TO: 46001;
+
+FROM: 46001;
+assume(n<=0);
+TO: 46001;
+
+FROM: 46001;
+assume(n>0);
+TO: 46002;
+
+FROM: 46002;
+TO: 46002;

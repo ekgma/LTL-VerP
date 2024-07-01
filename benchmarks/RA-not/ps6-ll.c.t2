@@ -1,0 +1,122 @@
+START: 1001;
+BUCHI: {10004, 41004, 41002, 10002};
+CUTPOINT: {10004, 41003, 41005, 41004, 41002, 10003, 1001, 10002};
+
+PRE: {x>=0 && x<=64 && k>=0 && k<=64 && y>=0 && y<=64 && c>=0 && c<=64  && k<=256};
+
+FROM: 1001;
+assume(c>=0);
+c := 0;
+x := 0;
+y := 0;
+k := k;
+TO: 10002;
+
+FROM: 1001;
+assume(c>=0);
+c := 0;
+x := 0;
+y := 0;
+k := k;
+TO: 10003;
+
+FROM: 1001;
+assume(c<0);
+c := 0;
+x := 0;
+y := 0;
+k := k;
+TO: 10004;
+
+FROM: 10002;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+c := 1  +  c;
+x := 1  +  x  +  5 * y  +  10 * y*y  +  10 * y*y*y  +  5 * y*y*y*y  +  y*y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10002;
+
+FROM: 10003;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c>=0);
+c := 1  +  c;
+x := 1  +  x  +  5 * y  +  10 * y*y  +  10 * y*y*y  +  5 * y*y*y*y  +  y*y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10003;
+
+FROM: 10003;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c<0);
+c := 1  +  c;
+x := 1  +  x  +  5 * y  +  10 * y*y  +  10 * y*y*y  +  5 * y*y*y*y  +  y*y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10004;
+
+FROM: 10004;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+c := 1  +  c;
+x := 1  +  x  +  5 * y  +  10 * y*y  +  10 * y*y*y  +  5 * y*y*y*y  +  y*y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10004;
+
+FROM: 10002;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(c  +  -1 * k>=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 41002;
+
+FROM: 10003;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(c  +  -1 * k>=0);
+assume(c>=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 41003;
+
+FROM: 10003;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(c  +  -1 * k>=0);
+assume(c<0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 41004;
+
+FROM: 10004;
+assume(-2*y*y*y*y*y*y - 6 * y*y*y*y*y - 5 * y*y*y*y + y*y + 12*x == 0);
+assume(c  +  -1 * k>=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 41004;
+
+FROM: 41002;
+TO: 41005;
+
+FROM: 41005;
+TO: 41005;
+
+FROM: 41003;
+assume(c>=0);
+TO: 41003;
+
+FROM: 41003;
+assume(c<0);
+TO: 41004;
+
+FROM: 41004;
+TO: 41004;

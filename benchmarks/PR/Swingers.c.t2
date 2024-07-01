@@ -1,0 +1,103 @@
+START: 1000;
+BUCHI: {7000, 1000, 26000};
+CUTPOINT: {7001, 26001, 1000, 26000, 7000};
+PRE: {samantha>=-64 && samantha<=63 && temp>=-64 && temp<=63 && bob>=-64 && bob<=63 };
+
+
+FROM: 1000;
+assume(bob>=-4);
+temp := temp;
+bob := 13 * 1;
+samantha := 17 * 1;
+TO: 7000;
+
+FROM: 1000;
+assume(bob<=-5);
+assume(bob<=0);
+temp := temp;
+bob := 13 * 1;
+samantha := 17 * 1;
+TO: 7001;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * bob  +  -1 * samantha>=0);
+assume(bob>=-4);
+temp := bob;
+bob := samantha;
+samantha := bob;
+TO: 7000;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * bob  +  -1 * samantha>=0);
+assume(bob<=-5);
+assume(bob<=0);
+temp := bob;
+bob := samantha;
+samantha := bob;
+TO: 7001;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * bob  +  -1 * samantha>=0);
+assume(bob>=1);
+temp := bob;
+bob := samantha;
+samantha := bob;
+TO: 7000;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * bob  +  -1 * samantha>=0);
+assume(bob<=0);
+temp := bob;
+bob := samantha;
+samantha := bob;
+TO: 7001;
+
+FROM: 7000;
+assume(-100 * 1  +  bob  +  samantha>=0);
+assume(bob>=-4);
+temp := temp;
+bob := bob;
+samantha := samantha;
+TO: 26000;
+
+FROM: 7000;
+assume(-100 * 1  +  bob  +  samantha>=0);
+assume(bob<=-5);
+assume(bob<=0);
+temp := temp;
+bob := bob;
+samantha := samantha;
+TO: 26001;
+
+FROM: 7001;
+assume(-100 * 1  +  bob  +  samantha>=0);
+assume(bob>=1);
+temp := temp;
+bob := bob;
+samantha := samantha;
+TO: 26000;
+
+FROM: 7001;
+assume(-100 * 1  +  bob  +  samantha>=0);
+assume(bob<=0);
+temp := temp;
+bob := bob;
+samantha := samantha;
+TO: 26001;
+
+FROM: 26000;
+assume(bob>=-4);
+TO: 26000;
+
+FROM: 26000;
+assume(bob<=-5);
+assume(bob<=0);
+TO: 26001;
+
+FROM: 26001;
+assume(bob>=1);
+TO: 26000;
+
+FROM: 26001;
+assume(bob<=0);
+TO: 26001;

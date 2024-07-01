@@ -1,0 +1,155 @@
+START: 1000;
+BUCHI: {27001, 7001};
+CUTPOINT: {7000, 27002, 7001, 7002, 27001, 27000, 1000};
+PRE: {i>=-64 && i<=63 && j>=-64 && j<=63 && fac>=-64 && fac<=63 };
+
+
+FROM: 1000;
+fac := 1;
+i := 1;
+j := j;
+TO: 7000;
+
+FROM: 1000;
+assume(fac<-5);
+assume(fac<=0);
+fac := 1;
+i := 1;
+j := j;
+TO: 7001;
+
+FROM: 7000;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7000;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac<-5);
+assume(fac<=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac<=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac>0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7000;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7000;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac<-5);
+assume(fac<=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac<=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac>0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7000;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27000;
+
+FROM: 7000;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac<-5);
+assume(fac<=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27001;
+
+FROM: 7001;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac<=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27001;
+
+FROM: 7001;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac>0);
+fac := fac;
+i := i;
+j := j;
+TO: 27002;
+
+FROM: 7002;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27002;
+
+FROM: 27000;
+TO: 27000;
+
+FROM: 27000;
+assume(fac<-5);
+assume(fac<=0);
+TO: 27001;
+
+FROM: 27001;
+assume(fac<=0);
+TO: 27001;
+
+FROM: 27001;
+assume(fac>0);
+TO: 27002;
+
+FROM: 27002;
+TO: 27002;

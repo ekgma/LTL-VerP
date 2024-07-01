@@ -1,0 +1,150 @@
+START: 1001;
+BUCHI: {27002, 7002};
+CUTPOINT: {27001, 1001, 27002, 7002, 7001, 7003, 27003};
+PRE: {fac>=-64 && fac<=63 && j>=-64 && j<=63 && i>=-64 && i<=63 };
+
+
+FROM: 1001;
+fac := 1;
+i := 1;
+j := j;
+TO: 7001;
+
+FROM: 1001;
+assume(fac<0);
+fac := 1;
+i := 1;
+j := j;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac<0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac<0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+assume(fac>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7003;
+
+FROM: 7003;
+assume(-1 * 1  +  -1 * fac  +  j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7003;
+
+FROM: 7001;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac<0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac<0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+assume(fac>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7003;
+
+FROM: 7003;
+assume(-1 * 1  +  fac  +  -1 * j>=0);
+fac := fac * i;
+i := 1  +  i;
+j := j;
+TO: 7003;
+
+FROM: 7001;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27001;
+
+FROM: 7001;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac<0);
+fac := fac;
+i := i;
+j := j;
+TO: 27002;
+
+FROM: 7002;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac<0);
+fac := fac;
+i := i;
+j := j;
+TO: 27002;
+
+FROM: 7002;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+assume(fac>=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27003;
+
+FROM: 7003;
+assume(fac  +  -1 * j>=0 && -1 * fac  +  j>=0);
+fac := fac;
+i := i;
+j := j;
+TO: 27003;
+
+FROM: 27001;
+TO: 27001;
+
+FROM: 27001;
+assume(fac<0);
+TO: 27002;
+
+FROM: 27002;
+assume(fac<0);
+TO: 27002;
+
+FROM: 27002;
+assume(fac>=0);
+TO: 27003;
+
+FROM: 27003;
+TO: 27003;

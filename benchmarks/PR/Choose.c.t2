@@ -1,0 +1,133 @@
+START: 1000;
+BUCHI: {1000, 45000, 4000};
+CUTPOINT: {45001, 45000, 1000, 4000, 4001};
+PRE: {i>=-64 && i<=63 };
+
+
+FROM: 1000;
+assume(i>=-4);
+i := 3 * 1;
+TO: 4000;
+
+FROM: 1000;
+assume(i<=-5);
+assume(i<=0);
+i := 3 * 1;
+TO: 4001;
+
+FROM: 4000;
+assume(-6 * 1  +  i>=0 && -3 * 1  +  i>=0);
+assume(i>=-4);
+i := 3 * 1  +  i;
+TO: 4000;
+
+FROM: 4000;
+assume(-6 * 1  +  i>=0 && -3 * 1  +  i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := 3 * 1  +  i;
+TO: 4001;
+
+FROM: 4001;
+assume(-6 * 1  +  i>=0 && -3 * 1  +  i>=0);
+assume(i>=1);
+i := 3 * 1  +  i;
+TO: 4000;
+
+FROM: 4001;
+assume(-6 * 1  +  i>=0 && -3 * 1  +  i>=0);
+assume(i<=0);
+i := 3 * 1  +  i;
+TO: 4001;
+
+FROM: 4000;
+assume(-11 * 1  +  i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i>=-4);
+i := -2 * 1  +  i;
+TO: 4000;
+
+FROM: 4000;
+assume(-11 * 1  +  i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := -2 * 1  +  i;
+TO: 4001;
+
+FROM: 4001;
+assume(-11 * 1  +  i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i>=1);
+i := -2 * 1  +  i;
+TO: 4000;
+
+FROM: 4001;
+assume(-11 * 1  +  i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i<=0);
+i := -2 * 1  +  i;
+TO: 4001;
+
+FROM: 4000;
+assume(10 * 1  +  -1 * i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i>=-4);
+i := 1  +  i;
+TO: 4000;
+
+FROM: 4000;
+assume(10 * 1  +  -1 * i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := 1  +  i;
+TO: 4001;
+
+FROM: 4001;
+assume(10 * 1  +  -1 * i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i>=1);
+i := 1  +  i;
+TO: 4000;
+
+FROM: 4001;
+assume(10 * 1  +  -1 * i>=0 && 5 * 1  +  -1 * i>=0 && -3 * 1  +  i>=0);
+assume(i<=0);
+i := 1  +  i;
+TO: 4001;
+
+FROM: 4000;
+assume(2 * 1  +  -1 * i>=0);
+assume(i>=-4);
+i := i;
+TO: 45000;
+
+FROM: 4000;
+assume(2 * 1  +  -1 * i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := i;
+TO: 45001;
+
+FROM: 4001;
+assume(2 * 1  +  -1 * i>=0);
+assume(i>=1);
+i := i;
+TO: 45000;
+
+FROM: 4001;
+assume(2 * 1  +  -1 * i>=0);
+assume(i<=0);
+i := i;
+TO: 45001;
+
+FROM: 45000;
+assume(i>=-4);
+TO: 45000;
+
+FROM: 45000;
+assume(i<=-5);
+assume(i<=0);
+TO: 45001;
+
+FROM: 45001;
+assume(i>=1);
+TO: 45000;
+
+FROM: 45001;
+assume(i<=0);
+TO: 45001;

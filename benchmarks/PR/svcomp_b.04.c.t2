@@ -1,0 +1,88 @@
+START: 1000;
+BUCHI: {19000, 1000};
+CUTPOINT: {19000, 1001, 19001, 1000};
+PRE: {x>=-64 && x<=63 && tmp>=-64 && tmp<=63 && y>=-64 && y<=63 };
+
+
+FROM: 1000;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(tmp>=-4);
+tmp := x;
+x := y;
+y := x;
+TO: 1000;
+
+FROM: 1000;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(tmp<=-5);
+assume(tmp<=0);
+tmp := x;
+x := y;
+y := x;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(tmp>=1);
+tmp := x;
+x := y;
+y := x;
+TO: 1000;
+
+FROM: 1001;
+assume(-1 * 1  +  x  +  -1 * y>=0);
+assume(tmp<=0);
+tmp := x;
+x := y;
+y := x;
+TO: 1001;
+
+FROM: 1000;
+assume(-1 * x  +  y>=0);
+assume(tmp>=-4);
+tmp := tmp;
+x := x;
+y := y;
+TO: 19000;
+
+FROM: 1000;
+assume(-1 * x  +  y>=0);
+assume(tmp<=-5);
+assume(tmp<=0);
+tmp := tmp;
+x := x;
+y := y;
+TO: 19001;
+
+FROM: 1001;
+assume(-1 * x  +  y>=0);
+assume(tmp>=1);
+tmp := tmp;
+x := x;
+y := y;
+TO: 19000;
+
+FROM: 1001;
+assume(-1 * x  +  y>=0);
+assume(tmp<=0);
+tmp := tmp;
+x := x;
+y := y;
+TO: 19001;
+
+FROM: 19000;
+assume(tmp>=-4);
+TO: 19000;
+
+FROM: 19000;
+assume(tmp<=-5);
+assume(tmp<=0);
+TO: 19001;
+
+FROM: 19001;
+assume(tmp>=1);
+TO: 19000;
+
+FROM: 19001;
+assume(tmp<=0);
+TO: 19001;

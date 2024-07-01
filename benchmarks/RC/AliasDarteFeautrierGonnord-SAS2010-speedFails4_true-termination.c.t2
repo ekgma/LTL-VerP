@@ -1,0 +1,165 @@
+START: 1001;
+BUCHI: {17002, 44002};
+CUTPOINT: {17001, 17002, 1001, 44001, 44002};
+PRE: {b>=-64 && b<=63 && t>=-64 && t<=63 && x>=-64 && x<=63 && n>=-64 && n<=63 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  b>=0);
+assume(b<0);
+b := b;
+t := 1;
+x := x;
+n := n;
+TO: 17001;
+
+FROM: 1001;
+assume(-1 * 1  +  b>=0);
+assume(b>=0);
+b := b;
+t := 1;
+x := x;
+n := n;
+TO: 17002;
+
+FROM: 1001;
+assume(-1 * b>=0);
+assume(b<0);
+b := b;
+t := -1 * 1;
+x := x;
+n := n;
+TO: 17001;
+
+FROM: 1001;
+assume(-1 * b>=0);
+assume(b>=0);
+b := b;
+t := -1 * 1;
+x := x;
+n := n;
+TO: 17002;
+
+FROM: 17001;
+assume(-1 * 1  +  b>=0 && n  +  -1 * x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := t  +  x;
+n := n;
+TO: 17001;
+
+FROM: 17001;
+assume(-1 * 1  +  b>=0 && n  +  -1 * x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := t  +  x;
+n := n;
+TO: 17002;
+
+FROM: 17002;
+assume(-1 * 1  +  b>=0 && n  +  -1 * x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := t  +  x;
+n := n;
+TO: 17001;
+
+FROM: 17002;
+assume(-1 * 1  +  b>=0 && n  +  -1 * x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := t  +  x;
+n := n;
+TO: 17002;
+
+FROM: 17001;
+assume(-1 * b>=0 && n  +  -1 * x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := -1 * t  +  x;
+n := n;
+TO: 17001;
+
+FROM: 17001;
+assume(-1 * b>=0 && n  +  -1 * x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := -1 * t  +  x;
+n := n;
+TO: 17002;
+
+FROM: 17002;
+assume(-1 * b>=0 && n  +  -1 * x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := -1 * t  +  x;
+n := n;
+TO: 17001;
+
+FROM: 17002;
+assume(-1 * b>=0 && n  +  -1 * x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := -1 * t  +  x;
+n := n;
+TO: 17002;
+
+FROM: 17001;
+assume(-1 * 1  +  -1 * n  +  x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := x;
+n := n;
+TO: 44001;
+
+FROM: 17001;
+assume(-1 * 1  +  -1 * n  +  x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := x;
+n := n;
+TO: 44002;
+
+FROM: 17002;
+assume(-1 * 1  +  -1 * n  +  x>=0);
+assume(b<0);
+b := b;
+t := t;
+x := x;
+n := n;
+TO: 44001;
+
+FROM: 17002;
+assume(-1 * 1  +  -1 * n  +  x>=0);
+assume(b>=0);
+b := b;
+t := t;
+x := x;
+n := n;
+TO: 44002;
+
+FROM: 44001;
+assume(b<0);
+TO: 44001;
+
+FROM: 44001;
+assume(b>=0);
+TO: 44002;
+
+FROM: 44002;
+assume(b<0);
+TO: 44001;
+
+FROM: 44002;
+assume(b>=0);
+TO: 44002;

@@ -1,0 +1,71 @@
+START: 1001;
+BUCHI: {7002, 24002};
+CUTPOINT: {1001, 24001, 7002, 24002, 7001};
+PRE: {sum>=-64 && sum<=63 && i>=-64 && i<=63 && bound>=-64 && bound<=63 };
+
+
+FROM: 1001;
+assume(bound>=-64 && bound<=63);
+bound := bound;
+i := 0;
+sum := 0;
+TO: 7001;
+
+FROM: 1001;
+assume(bound<-64 || bound>63);
+bound := bound;
+i := 0;
+sum := 0;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  bound  +  -1 * i>=0);
+assume(bound>=-64 && bound<=63);
+bound := bound;
+i := 1  +  i;
+sum := i  +  sum;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  bound  +  -1 * i>=0);
+assume(bound<-64 || bound>63);
+bound := bound;
+i := 1  +  i;
+sum := i  +  sum;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  bound  +  -1 * i>=0);
+bound := bound;
+i := 1  +  i;
+sum := i  +  sum;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * bound  +  i>=0);
+assume(bound>=-64 && bound<=63);
+bound := bound;
+i := i;
+sum := sum;
+TO: 24001;
+
+FROM: 7001;
+assume(-1 * bound  +  i>=0);
+assume(bound<-64 || bound>63);
+bound := bound;
+i := i;
+sum := sum;
+TO: 24002;
+
+FROM: 7002;
+assume(-1 * bound  +  i>=0);
+bound := bound;
+i := i;
+sum := sum;
+TO: 24002;
+
+FROM: 24001;
+TO: 24002;
+
+FROM: 24002;
+TO: 24002;

@@ -1,0 +1,189 @@
+START: 1001;
+BUCHI: {38002, 9002};
+CUTPOINT: {1001, 9001, 9002, 38001, 38002};
+PRE: {M>=-64 && M<=63 && x>=-64 && x<=63 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  M>=0);
+assume(M<0);
+x := x;
+M := M;
+TO: 9001;
+
+FROM: 1001;
+assume(-1 * 1  +  M>=0);
+assume(M>=0);
+x := x;
+M := M;
+TO: 9002;
+
+FROM: 1001;
+assume(-1 * M>=0);
+assume(M<0);
+x := x;
+M := M;
+TO: 38001;
+
+FROM: 1001;
+assume(-1 * M>=0);
+assume(M>=0);
+x := x;
+M := M;
+TO: 38002;
+
+FROM: 9001;
+assume(-1 * 1  +  -1 * M  +  x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M<0);
+x := 0;
+M := M;
+TO: 9001;
+
+FROM: 9001;
+assume(-1 * 1  +  -1 * M  +  x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M>=0);
+x := 0;
+M := M;
+TO: 9002;
+
+FROM: 9002;
+assume(-1 * 1  +  -1 * M  +  x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M<0);
+x := 0;
+M := M;
+TO: 9001;
+
+FROM: 9002;
+assume(-1 * 1  +  -1 * M  +  x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M>=0);
+x := 0;
+M := M;
+TO: 9002;
+
+FROM: 9001;
+assume(M  +  -1 * x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M<0);
+x := 1  +  x;
+M := M;
+TO: 9001;
+
+FROM: 9001;
+assume(M  +  -1 * x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M>=0);
+x := 1  +  x;
+M := M;
+TO: 9002;
+
+FROM: 9002;
+assume(M  +  -1 * x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M<0);
+x := 1  +  x;
+M := M;
+TO: 9001;
+
+FROM: 9002;
+assume(M  +  -1 * x>=0 && -1 * 1  +  M  +  -1 * x>=0);
+assume(M>=0);
+x := 1  +  x;
+M := M;
+TO: 9002;
+
+FROM: 9001;
+assume(-1 * 1  +  -1 * M  +  x>=0);
+assume(M<0);
+x := 0;
+M := M;
+TO: 9001;
+
+FROM: 9001;
+assume(-1 * 1  +  -1 * M  +  x>=0);
+assume(M>=0);
+x := 0;
+M := M;
+TO: 9002;
+
+FROM: 9002;
+assume(-1 * 1  +  -1 * M  +  x>=0);
+assume(M<0);
+x := 0;
+M := M;
+TO: 9001;
+
+FROM: 9002;
+assume(-1 * 1  +  -1 * M  +  x>=0);
+assume(M>=0);
+x := 0;
+M := M;
+TO: 9002;
+
+FROM: 9001;
+assume(M  +  -1 * x>=0 && -1 * 1  +  -1 * M  +  x>=0);
+assume(M<0);
+x := 1  +  x;
+M := M;
+TO: 9001;
+
+FROM: 9001;
+assume(M  +  -1 * x>=0 && -1 * 1  +  -1 * M  +  x>=0);
+assume(M>=0);
+x := 1  +  x;
+M := M;
+TO: 9002;
+
+FROM: 9002;
+assume(M  +  -1 * x>=0 && -1 * 1  +  -1 * M  +  x>=0);
+assume(M<0);
+x := 1  +  x;
+M := M;
+TO: 9001;
+
+FROM: 9002;
+assume(M  +  -1 * x>=0 && -1 * 1  +  -1 * M  +  x>=0);
+assume(M>=0);
+x := 1  +  x;
+M := M;
+TO: 9002;
+
+FROM: 9001;
+assume(-1 * M  +  x>=0 && M  +  -1 * x>=0);
+assume(M<0);
+x := x;
+M := M;
+TO: 38001;
+
+FROM: 9001;
+assume(-1 * M  +  x>=0 && M  +  -1 * x>=0);
+assume(M>=0);
+x := x;
+M := M;
+TO: 38002;
+
+FROM: 9002;
+assume(-1 * M  +  x>=0 && M  +  -1 * x>=0);
+assume(M<0);
+x := x;
+M := M;
+TO: 38001;
+
+FROM: 9002;
+assume(-1 * M  +  x>=0 && M  +  -1 * x>=0);
+assume(M>=0);
+x := x;
+M := M;
+TO: 38002;
+
+FROM: 38001;
+assume(M<0);
+TO: 38001;
+
+FROM: 38001;
+assume(M>=0);
+TO: 38002;
+
+FROM: 38002;
+assume(M<0);
+TO: 38001;
+
+FROM: 38002;
+assume(M>=0);
+TO: 38002;

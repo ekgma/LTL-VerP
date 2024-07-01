@@ -1,0 +1,157 @@
+START: 1001;
+BUCHI: {38001, 1001, 7001};
+CUTPOINT: {38002, 7001, 7002, 38001, 1001};
+PRE: {x>=-64 && x<=63 && c>=-64 && c<=63 && flag>=-64 && flag<=63 && y>=-64 && y<=63 };
+
+
+FROM: 1001;
+assume(c>=-64 && c<=63);
+flag := 1;
+c := 0;
+x := x;
+y := y;
+TO: 7001;
+
+FROM: 1001;
+assume(c<-64 || c>63);
+flag := 1;
+c := 0;
+x := x;
+y := y;
+TO: 7002;
+
+FROM: 7001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  -1 * flag>=0);
+assume(c>=-64 && c<=63);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7001;
+
+FROM: 7001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  -1 * flag>=0);
+assume(c<-64 || c>63);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7002;
+assume(x  +  -1 * y>=0 && -1 * 1  +  -1 * flag>=0);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  -1 * flag>=0);
+assume(c>=-64 && c<=63);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  -1 * flag>=0);
+assume(c<-64 || c>63);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  -1 * flag>=0);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  flag>=0);
+assume(c>=-64 && c<=63);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7001;
+
+FROM: 7001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  flag>=0);
+assume(c<-64 || c>63);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7002;
+assume(x  +  -1 * y>=0 && -1 * 1  +  flag>=0);
+flag := 0;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  flag>=0);
+assume(c>=-64 && c<=63);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  flag>=0);
+assume(c<-64 || c>63);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7002;
+assume(-1 * 1  +  -1 * x  +  y>=0 && -1 * 1  +  flag>=0);
+flag := flag;
+c := 1  +  c;
+x := 1  +  x;
+y := y;
+TO: 7002;
+
+FROM: 7001;
+assume(flag>=0 && -1 * flag>=0);
+assume(c>=-64 && c<=63);
+flag := flag;
+c := c;
+x := x;
+y := y;
+TO: 38001;
+
+FROM: 7001;
+assume(flag>=0 && -1 * flag>=0);
+assume(c<-64 || c>63);
+flag := flag;
+c := c;
+x := x;
+y := y;
+TO: 38002;
+
+FROM: 7002;
+assume(flag>=0 && -1 * flag>=0);
+flag := flag;
+c := c;
+x := x;
+y := y;
+TO: 38002;
+
+FROM: 38001;
+TO: 38002;
+
+FROM: 38002;
+TO: 38002;

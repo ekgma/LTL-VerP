@@ -1,0 +1,454 @@
+START: 1001;
+BUCHI: {88002, 88004, 13002, 13004};
+CUTPOINT: {88002, 1001, 88003, 13003, 88005, 88004, 13002, 13004};
+PRE: {MAX>=0 && MAX<=64 && b>=0 && b<=64 && c>=0 && c<=64 && a>=0 && a<=64 };
+
+
+FROM: 1001;
+assume(MAX>=0);
+a := 1;
+b := 1;
+c := 1;
+MAX := 1000 * 1;
+TO: 13002;
+
+FROM: 1001;
+assume(MAX>=0);
+a := 1;
+b := 1;
+c := 1;
+MAX := 1000 * 1;
+TO: 13003;
+
+FROM: 1001;
+assume(MAX<0);
+a := 1;
+b := 1;
+c := 1;
+MAX := 1000 * 1;
+TO: 13004;
+
+FROM: 13002;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  -1 * a*a*a  +  b*b*b  +  c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(0 * 1  +  -1 * MAX  +  b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(-1 * 1  +  MAX  +  -1 * b>=0 && 0 * 1  +  -1 * MAX  +  a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1;
+b := 1  +  b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(-1 * 1  +  -1 * MAX  +  b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := 1;
+c := 1  +  c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13002;
+
+FROM: 13003;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13003;
+
+FROM: 13003;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+assume(MAX<0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13004;
+assume(MAX  +  -1 * b>=0 && -1 * 1  +  MAX  +  -1 * a>=0 && -1 * 1  +  a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && MAX  +  -1 * c>=0);
+a := 1  +  a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 13004;
+
+FROM: 13002;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88002;
+
+FROM: 13003;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+assume(MAX>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88003;
+
+FROM: 13003;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+assume(MAX<0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13004;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13002;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * 1  +  -1 * MAX  +  c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88002;
+
+FROM: 13003;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * 1  +  -1 * MAX  +  c>=0);
+assume(MAX>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88003;
+
+FROM: 13003;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * 1  +  -1 * MAX  +  c>=0);
+assume(MAX<0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13004;
+assume(a*a*a  +  -1 * b*b*b  +  -1 * c*c*c>=0 && -1 * 1  +  -1 * MAX  +  c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * MAX  +  c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88002;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+assume(MAX>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+assume(MAX<0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13004;
+assume(-1 * 1  +  -1 * MAX  +  c>=0 && -1 * a*a*a  +  b*b*b  +  c*c*c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * MAX  +  c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88002;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  c>=0);
+assume(MAX>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * MAX  +  c>=0);
+assume(MAX<0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 13004;
+assume(-1 * 1  +  -1 * MAX  +  c>=0);
+a := a;
+b := b;
+c := c;
+MAX := MAX;
+TO: 88004;
+
+FROM: 88002;
+TO: 88005;
+
+FROM: 88005;
+TO: 88005;
+
+FROM: 88003;
+assume(MAX>=0);
+TO: 88003;
+
+FROM: 88003;
+assume(MAX<0);
+TO: 88004;
+
+FROM: 88004;
+TO: 88004;

@@ -1,0 +1,151 @@
+START: 1001;
+BUCHI: {48002};
+CUTPOINT: {48001, 1001, 13001, 48002, 48003, 13003};
+PRE: {w>=0 && w<=64 && u>=0 && u<=64 && z>=0 && z<=64 && c>=0 && c<=64 && x>=0 && x<=64 && v>=0 && v<=64 && y>=0 && y<=64 };
+
+
+FROM: 1001;
+assume(c>=0);
+c := 0;
+u := x;
+v := y;
+w := z;
+x := x;
+y := y;
+z := z;
+TO: 13001;
+
+FROM: 1001;
+assume(c<0);
+c := 0;
+u := x;
+v := y;
+w := z;
+x := x;
+y := y;
+z := z;
+TO: 13003;
+
+FROM: 13001;
+assume(-2 * 1  +  z>=0 && x  +  -1 * y>=0);
+assume(c>=0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := -1 * 1  +  x  +  z;
+y := y;
+z := -1 * 1  +  z;
+TO: 13001;
+
+FROM: 13001;
+assume(-2 * 1  +  z>=0 && x  +  -1 * y>=0);
+assume(c<0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := -1 * 1  +  x  +  z;
+y := y;
+z := -1 * 1  +  z;
+TO: 13003;
+
+FROM: 13003;
+assume(-2 * 1  +  z>=0 && x  +  -1 * y>=0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := -1 * 1  +  x  +  z;
+y := y;
+z := -1 * 1  +  z;
+TO: 13003;
+
+FROM: 13001;
+assume(1  +  -1 * z>=0 && x  +  -1 * y>=0);
+assume(c>=0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := 1  +  y;
+z := z;
+TO: 13001;
+
+FROM: 13001;
+assume(1  +  -1 * z>=0 && x  +  -1 * y>=0);
+assume(c<0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := 1  +  y;
+z := z;
+TO: 13003;
+
+FROM: 13003;
+assume(1  +  -1 * z>=0 && x  +  -1 * y>=0);
+c := 1  +  c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := 1  +  y;
+z := z;
+TO: 13003;
+
+FROM: 13001;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+assume(c>=0);
+c := c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := y;
+z := z;
+TO: 48001;
+
+FROM: 13001;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+assume(c<0);
+c := c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := y;
+z := z;
+TO: 48003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+c := c;
+u := u;
+v := v;
+w := w;
+x := x;
+y := y;
+z := z;
+TO: 48003;
+
+FROM: 48001;
+assume(c>=0);
+TO: 48002;
+
+FROM: 48002;
+assume(c>=0);
+TO: 48002;
+
+FROM: 48001;
+assume(c<0);
+TO: 48003;
+
+FROM: 48002;
+assume(c<0);
+TO: 48003;
+
+FROM: 48003;
+TO: 48003;

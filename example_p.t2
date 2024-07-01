@@ -1,0 +1,14 @@
+START: 1;
+PRE: {i>=0 && i<=64};
+
+FROM: 1;
+assume(i>=1);
+i:=i-1;
+TO: 1;
+
+FROM: 1;
+assume(i<=0);
+TO: 2;
+
+FROM: 2;
+TO: 2;

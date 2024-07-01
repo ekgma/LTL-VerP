@@ -1,0 +1,126 @@
+START: 1000;
+BUCHI: {32001, 1001};
+CUTPOINT: {1001, 1000, 32001, 1002, 32000, 32002};
+PRE: {j>=-64 && j<=63 && i>=-64 && i<=63 };
+
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * i  +  j>=0 && 1>=0);
+i := 4 * 1  +  i;
+j := j;
+TO: 1000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * i  +  j>=0 && 1>=0);
+assume(i<-5);
+assume(i<=0);
+i := 4 * 1  +  i;
+j := j;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * i  +  j>=0 && 1>=0);
+assume(i<=0);
+i := 4 * 1  +  i;
+j := j;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * i  +  j>=0 && 1>=0);
+assume(i>0);
+i := 4 * 1  +  i;
+j := j;
+TO: 1002;
+
+FROM: 1002;
+assume(-1 * 1  +  -1 * i  +  j>=0 && 1>=0);
+i := 4 * 1  +  i;
+j := j;
+TO: 1002;
+
+FROM: 1000;
+assume(i  +  -1 * j>=0 && 1>=0);
+i := 2 * 1  +  i;
+j := 1  +  j;
+TO: 1000;
+
+FROM: 1000;
+assume(i  +  -1 * j>=0 && 1>=0);
+assume(i<-5);
+assume(i<=0);
+i := 2 * 1  +  i;
+j := 1  +  j;
+TO: 1001;
+
+FROM: 1001;
+assume(i  +  -1 * j>=0 && 1>=0);
+assume(i<=0);
+i := 2 * 1  +  i;
+j := 1  +  j;
+TO: 1001;
+
+FROM: 1001;
+assume(i  +  -1 * j>=0 && 1>=0);
+assume(i>0);
+i := 2 * 1  +  i;
+j := 1  +  j;
+TO: 1002;
+
+FROM: 1002;
+assume(i  +  -1 * j>=0 && 1>=0);
+i := 2 * 1  +  i;
+j := 1  +  j;
+TO: 1002;
+
+FROM: 1000;
+assume(-2 * 1>=0);
+i := i;
+j := j;
+TO: 32000;
+
+FROM: 1000;
+assume(-2 * 1>=0);
+assume(i<-5);
+assume(i<=0);
+i := i;
+j := j;
+TO: 32001;
+
+FROM: 1001;
+assume(-2 * 1>=0);
+assume(i<=0);
+i := i;
+j := j;
+TO: 32001;
+
+FROM: 1001;
+assume(-2 * 1>=0);
+assume(i>0);
+i := i;
+j := j;
+TO: 32002;
+
+FROM: 1002;
+assume(-2 * 1>=0);
+i := i;
+j := j;
+TO: 32002;
+
+FROM: 32000;
+TO: 32000;
+
+FROM: 32000;
+assume(i<-5);
+assume(i<=0);
+TO: 32001;
+
+FROM: 32001;
+assume(i<=0);
+TO: 32001;
+
+FROM: 32001;
+assume(i>0);
+TO: 32002;
+
+FROM: 32002;
+TO: 32002;

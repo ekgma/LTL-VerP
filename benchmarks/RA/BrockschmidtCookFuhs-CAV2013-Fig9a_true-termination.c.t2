@@ -1,0 +1,164 @@
+START: 1001;
+BUCHI: {44002};
+CUTPOINT: {12003, 23003, 23001, 44003, 44002, 44001, 12001, 1001};
+PRE: {k>=0 && k<=64 && n>=0 && n<=64 && j>=0 && j<=64 && i>=0 && i<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  k>=0);
+assume(i>=0);
+i := 0;
+j := j;
+k := k;
+n := n;
+TO: 12001;
+
+FROM: 1001;
+assume(-1 * 1  +  k>=0);
+assume(i<0);
+i := 0;
+j := j;
+k := k;
+n := n;
+TO: 12003;
+
+FROM: 1001;
+assume(-1 * k>=0);
+assume(i>=0);
+i := i;
+j := j;
+k := k;
+n := n;
+TO: 44001;
+
+FROM: 1001;
+assume(-1 * k>=0);
+assume(i<0);
+i := i;
+j := j;
+k := k;
+n := n;
+TO: 44003;
+
+FROM: 23001;
+assume(i  +  -1 * j>=0);
+assume(i>=0);
+i := i;
+j := j  +  k;
+k := k;
+n := n;
+TO: 23001;
+
+FROM: 23001;
+assume(i  +  -1 * j>=0);
+assume(i<0);
+i := i;
+j := j  +  k;
+k := k;
+n := n;
+TO: 23003;
+
+FROM: 23003;
+assume(i  +  -1 * j>=0);
+i := i;
+j := j  +  k;
+k := k;
+n := n;
+TO: 23003;
+
+FROM: 23001;
+assume(-1 * 1  +  -1 * i  +  j>=0);
+assume(i>=0);
+i := 1  +  i;
+j := j;
+k := k;
+n := n;
+TO: 12001;
+
+FROM: 23001;
+assume(-1 * 1  +  -1 * i  +  j>=0);
+assume(i<0);
+i := 1  +  i;
+j := j;
+k := k;
+n := n;
+TO: 12003;
+
+FROM: 23003;
+assume(-1 * 1  +  -1 * i  +  j>=0);
+i := 1  +  i;
+j := j;
+k := k;
+n := n;
+TO: 12003;
+
+FROM: 12001;
+assume(-1 * 1  +  -1 * i  +  n>=0);
+assume(i>=0);
+i := i;
+j := 0;
+k := k;
+n := n;
+TO: 23001;
+
+FROM: 12001;
+assume(-1 * 1  +  -1 * i  +  n>=0);
+assume(i<0);
+i := i;
+j := 0;
+k := k;
+n := n;
+TO: 23003;
+
+FROM: 12003;
+assume(-1 * 1  +  -1 * i  +  n>=0);
+i := i;
+j := 0;
+k := k;
+n := n;
+TO: 23003;
+
+FROM: 12001;
+assume(i  +  -1 * n>=0);
+assume(i>=0);
+i := i;
+j := j;
+k := k;
+n := n;
+TO: 44001;
+
+FROM: 12001;
+assume(i  +  -1 * n>=0);
+assume(i<0);
+i := i;
+j := j;
+k := k;
+n := n;
+TO: 44003;
+
+FROM: 12003;
+assume(i  +  -1 * n>=0);
+i := i;
+j := j;
+k := k;
+n := n;
+TO: 44003;
+
+FROM: 44001;
+assume(i>=0);
+TO: 44002;
+
+FROM: 44002;
+assume(i>=0);
+TO: 44002;
+
+FROM: 44001;
+assume(i<0);
+TO: 44003;
+
+FROM: 44002;
+assume(i<0);
+TO: 44003;
+
+FROM: 44003;
+TO: 44003;

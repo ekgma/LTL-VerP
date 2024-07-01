@@ -1,0 +1,138 @@
+START: 1000;
+BUCHI: {31001, 10001};
+CUTPOINT: {1000, 10001, 31000, 10000, 31002, 31001, 10002};
+
+PRE: {t>=-64 && t<=63 && n>=-64 && n<=63 && s>=-64 && s<=63 && a>=-64 && a<=63  && 1>=0};
+
+FROM: 1000;
+a := 0;
+s := 1;
+t := 1;
+n := n;
+TO: 10000;
+
+FROM: 1000;
+assume(a<-5);
+assume(a<=0);
+a := 0;
+s := 1;
+t := 1;
+n := n;
+TO: 10001;
+
+FROM: 10000;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(n  +  -1 * s>=0);
+a := 1  +  a;
+s := 2 * 1  +  s  +  t;
+t := 2 * 1  +  t;
+n := n;
+TO: 10000;
+
+FROM: 10000;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(n  +  -1 * s>=0);
+assume(a<-5);
+assume(a<=0);
+a := 1  +  a;
+s := 2 * 1  +  s  +  t;
+t := 2 * 1  +  t;
+n := n;
+TO: 10001;
+
+FROM: 10001;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(n  +  -1 * s>=0);
+assume(a<=0);
+a := 1  +  a;
+s := 2 * 1  +  s  +  t;
+t := 2 * 1  +  t;
+n := n;
+TO: 10001;
+
+FROM: 10001;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(n  +  -1 * s>=0);
+assume(a>0);
+a := 1  +  a;
+s := 2 * 1  +  s  +  t;
+t := 2 * 1  +  t;
+n := n;
+TO: 10002;
+
+FROM: 10002;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(n  +  -1 * s>=0);
+a := 1  +  a;
+s := 2 * 1  +  s  +  t;
+t := 2 * 1  +  t;
+n := n;
+TO: 10002;
+
+FROM: 10000;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(-1 * 1  +  -1 * n  +  s>=0);
+a := a;
+s := s;
+t := t;
+n := n;
+TO: 31000;
+
+FROM: 10000;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(-1 * 1  +  -1 * n  +  s>=0);
+assume(a<-5);
+assume(a<=0);
+a := a;
+s := s;
+t := t;
+n := n;
+TO: 31001;
+
+FROM: 10001;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(-1 * 1  +  -1 * n  +  s>=0);
+assume(a<=0);
+a := a;
+s := s;
+t := t;
+n := n;
+TO: 31001;
+
+FROM: 10001;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(-1 * 1  +  -1 * n  +  s>=0);
+assume(a>0);
+a := a;
+s := s;
+t := t;
+n := n;
+TO: 31002;
+
+FROM: 10002;
+assume(t == 2*a + 1 && s == (a + 1) * (a + 1) && t*t - 4*s + 2*t + 1 == 0);
+assume(-1 * 1  +  -1 * n  +  s>=0);
+a := a;
+s := s;
+t := t;
+n := n;
+TO: 31002;
+
+FROM: 31000;
+TO: 31000;
+
+FROM: 31000;
+assume(a<-5);
+assume(a<=0);
+TO: 31001;
+
+FROM: 31001;
+assume(a<=0);
+TO: 31001;
+
+FROM: 31001;
+assume(a>0);
+TO: 31002;
+
+FROM: 31002;
+TO: 31002;

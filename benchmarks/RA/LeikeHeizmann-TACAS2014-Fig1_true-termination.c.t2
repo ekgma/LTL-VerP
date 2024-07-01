@@ -1,0 +1,64 @@
+START: 1001;
+BUCHI: {18002};
+CUTPOINT: {18002, 18003, 1001, 18001, 1003};
+PRE: {q>=0 && q<=64 && y>=0 && y<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  q>=0);
+assume(q>=0);
+q := q  +  -1 * y;
+y := 1  +  y;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  q>=0);
+assume(q<0);
+q := q  +  -1 * y;
+y := 1  +  y;
+TO: 1003;
+
+FROM: 1003;
+assume(-1 * 1  +  q>=0);
+q := q  +  -1 * y;
+y := 1  +  y;
+TO: 1003;
+
+FROM: 1001;
+assume(-1 * q>=0);
+assume(q>=0);
+q := q;
+y := y;
+TO: 18001;
+
+FROM: 1001;
+assume(-1 * q>=0);
+assume(q<0);
+q := q;
+y := y;
+TO: 18003;
+
+FROM: 1003;
+assume(-1 * q>=0);
+q := q;
+y := y;
+TO: 18003;
+
+FROM: 18001;
+assume(q>=0);
+TO: 18002;
+
+FROM: 18002;
+assume(q>=0);
+TO: 18002;
+
+FROM: 18001;
+assume(q<0);
+TO: 18003;
+
+FROM: 18002;
+assume(q<0);
+TO: 18003;
+
+FROM: 18003;
+TO: 18003;

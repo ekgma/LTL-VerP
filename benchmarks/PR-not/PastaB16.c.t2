@@ -1,0 +1,160 @@
+START: 1000;
+BUCHI: {1001, 9001, 27001};
+CUTPOINT: {27002, 1001, 27000, 9001, 1002, 27001, 9002, 1000, 9000};
+PRE: {y>=-64 && y<=63 && x>=-64 && x<=63 };
+
+
+FROM: 1000;
+assume(-1 * 1  +  x>=0);
+x := x;
+y := y;
+TO: 9000;
+
+FROM: 1000;
+assume(-1 * 1  +  x>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := y;
+TO: 9001;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0);
+assume(x<=0);
+x := x;
+y := y;
+TO: 9001;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0);
+assume(x>0);
+x := x;
+y := y;
+TO: 9002;
+
+FROM: 1002;
+assume(-1 * 1  +  x>=0);
+x := x;
+y := y;
+TO: 9002;
+
+FROM: 1000;
+assume(-1 * x>=0);
+x := x;
+y := y;
+TO: 27000;
+
+FROM: 1000;
+assume(-1 * x>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := y;
+TO: 27001;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(x<=0);
+x := x;
+y := y;
+TO: 27001;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(x>0);
+x := x;
+y := y;
+TO: 27002;
+
+FROM: 1002;
+assume(-1 * x>=0);
+x := x;
+y := y;
+TO: 27002;
+
+FROM: 9000;
+assume(-1 * 1  +  y>=0);
+x := x;
+y := -1 * 1  +  y;
+TO: 9000;
+
+FROM: 9000;
+assume(-1 * 1  +  y>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := -1 * 1  +  y;
+TO: 9001;
+
+FROM: 9001;
+assume(-1 * 1  +  y>=0);
+assume(x<=0);
+x := x;
+y := -1 * 1  +  y;
+TO: 9001;
+
+FROM: 9001;
+assume(-1 * 1  +  y>=0);
+assume(x>0);
+x := x;
+y := -1 * 1  +  y;
+TO: 9002;
+
+FROM: 9002;
+assume(-1 * 1  +  y>=0);
+x := x;
+y := -1 * 1  +  y;
+TO: 9002;
+
+FROM: 9000;
+assume(-1 * y>=0);
+x := -1 * 1  +  x;
+y := y;
+TO: 1000;
+
+FROM: 9000;
+assume(-1 * y>=0);
+assume(x<-5);
+assume(x<=0);
+x := -1 * 1  +  x;
+y := y;
+TO: 1001;
+
+FROM: 9001;
+assume(-1 * y>=0);
+assume(x<=0);
+x := -1 * 1  +  x;
+y := y;
+TO: 1001;
+
+FROM: 9001;
+assume(-1 * y>=0);
+assume(x>0);
+x := -1 * 1  +  x;
+y := y;
+TO: 1002;
+
+FROM: 9002;
+assume(-1 * y>=0);
+x := -1 * 1  +  x;
+y := y;
+TO: 1002;
+
+FROM: 27000;
+TO: 27000;
+
+FROM: 27000;
+assume(x<-5);
+assume(x<=0);
+TO: 27001;
+
+FROM: 27001;
+assume(x<=0);
+TO: 27001;
+
+FROM: 27001;
+assume(x>0);
+TO: 27002;
+
+FROM: 27002;
+TO: 27002;

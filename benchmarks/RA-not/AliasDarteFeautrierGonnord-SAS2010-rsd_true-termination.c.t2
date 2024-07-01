@@ -1,0 +1,178 @@
+START: 1001;
+BUCHI: {23002, 55004, 23004, 55002};
+CUTPOINT: {23003, 1001, 23002, 55004, 55005, 23004, 55003, 55002};
+PRE: {r>=0 && r<=64 && temp>=0 && temp<=64 && db>=0 && db<=64 && da>=0 && da<=64 };
+
+
+FROM: 1001;
+assume(r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := 2 * r;
+db := 2 * r;
+TO: 23002;
+
+FROM: 1001;
+assume(r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := 2 * r;
+db := 2 * r;
+TO: 23003;
+
+FROM: 1001;
+assume(r>=0);
+assume(da<0);
+temp := temp;
+r := r;
+da := 2 * r;
+db := 2 * r;
+TO: 23004;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * r>=0);
+assume(da<0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55004;
+
+FROM: 23002;
+assume(da  +  -1 * r>=0);
+temp := temp;
+r := r;
+da := -1 * 1  +  da;
+db := db;
+TO: 23002;
+
+FROM: 23003;
+assume(da  +  -1 * r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := -1 * 1  +  da;
+db := db;
+TO: 23003;
+
+FROM: 23003;
+assume(da  +  -1 * r>=0);
+assume(da<0);
+temp := temp;
+r := r;
+da := -1 * 1  +  da;
+db := db;
+TO: 23004;
+
+FROM: 23004;
+assume(da  +  -1 * r>=0);
+temp := temp;
+r := r;
+da := -1 * 1  +  da;
+db := db;
+TO: 23004;
+
+FROM: 23002;
+assume(da  +  -1 * r>=0);
+temp := da;
+r := r;
+da := -1 * 1  +  db;
+db := -1 * 1  +  db;
+TO: 23002;
+
+FROM: 23003;
+assume(da  +  -1 * r>=0);
+assume(da>=0);
+temp := da;
+r := r;
+da := -1 * 1  +  db;
+db := -1 * 1  +  db;
+TO: 23003;
+
+FROM: 23003;
+assume(da  +  -1 * r>=0);
+assume(da<0);
+temp := da;
+r := r;
+da := -1 * 1  +  db;
+db := -1 * 1  +  db;
+TO: 23004;
+
+FROM: 23004;
+assume(da  +  -1 * r>=0);
+temp := da;
+r := r;
+da := -1 * 1  +  db;
+db := -1 * 1  +  db;
+TO: 23004;
+
+FROM: 23002;
+assume(-1 * 1  +  -1 * da  +  r>=0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55002;
+
+FROM: 23003;
+assume(-1 * 1  +  -1 * da  +  r>=0);
+assume(da>=0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55003;
+
+FROM: 23003;
+assume(-1 * 1  +  -1 * da  +  r>=0);
+assume(da<0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55004;
+
+FROM: 23004;
+assume(-1 * 1  +  -1 * da  +  r>=0);
+temp := temp;
+r := r;
+da := da;
+db := db;
+TO: 55004;
+
+FROM: 55002;
+TO: 55005;
+
+FROM: 55005;
+TO: 55005;
+
+FROM: 55003;
+assume(da>=0);
+TO: 55003;
+
+FROM: 55003;
+assume(da<0);
+TO: 55004;
+
+FROM: 55004;
+TO: 55004;

@@ -1,0 +1,144 @@
+START: 1001;
+BUCHI: {1002, 1004, 25002, 25004};
+CUTPOINT: {25005, 25003, 1004, 25002, 1001, 1002, 1003, 25004};
+PRE: {x>=0 && x<=64 && d1>=0 && d1<=64 && d1old>=0 && d1old<=64 && d2>=0 && d2<=64 };
+
+
+FROM: 1001;
+assume(x>=0);
+assume(d1>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1002;
+
+FROM: 1001;
+assume(x>=0);
+assume(d1>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1003;
+
+FROM: 1001;
+assume(x>=0);
+assume(d1<0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1004;
+
+FROM: 1002;
+assume(x>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1002;
+
+FROM: 1003;
+assume(x>=0);
+assume(d1>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1003;
+
+FROM: 1003;
+assume(x>=0);
+assume(d1<0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1004;
+
+FROM: 1004;
+assume(x>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 1004;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1<0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25004;
+
+FROM: 1002;
+assume(-1 * 1  +  -1 * x>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25002;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25003;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1<0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25004;
+
+FROM: 1004;
+assume(-1 * 1  +  -1 * x>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 25004;
+
+FROM: 25002;
+TO: 25005;
+
+FROM: 25005;
+TO: 25005;
+
+FROM: 25003;
+assume(d1>=0);
+TO: 25003;
+
+FROM: 25003;
+assume(d1<0);
+TO: 25004;
+
+FROM: 25004;
+TO: 25004;

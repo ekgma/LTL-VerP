@@ -1,0 +1,151 @@
+START: 1000;
+BUCHI: {45000, 17000, 1000};
+CUTPOINT: {45000, 17000, 17001, 45001, 1000};
+
+PRE: {k>=-64 && k<=63 && az>=-64 && az<=63 && a>=-64 && a<=63 && z>=-64 && z<=63 && x>=-64 && x<=63 && y>=-64 && y<=63 && c>=-64 && c<=63  && 1>=0};
+
+FROM: 1000;
+assume(a>=-4);
+a := a;
+c := 1;
+x := a;
+y := 1;
+az := a * z;
+z := z;
+k := k;
+TO: 17000;
+
+FROM: 1000;
+assume(a<=-5);
+assume(a<=0);
+a := a;
+c := 1;
+x := a;
+y := 1;
+az := a * z;
+z := z;
+k := k;
+TO: 17001;
+
+FROM: 17000;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a>=-4);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17000;
+
+FROM: 17000;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a<=-5);
+assume(a<=0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17001;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a>=1);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17000;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(a<=0);
+a := a;
+c := 1  +  c;
+x := a  +  x * z;
+y := y * z;
+az := az;
+z := z;
+k := k;
+TO: 17001;
+
+FROM: 17000;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a>=-4);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45000;
+
+FROM: 17000;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a<=-5);
+assume(a<=0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45001;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a>=1);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45000;
+
+FROM: 17001;
+assume(z*x - x + a - az*y == 0);
+assume(c  +  -1 * k>=0);
+assume(a<=0);
+a := a;
+c := c;
+x := x;
+y := y;
+az := az;
+z := z;
+k := k;
+TO: 45001;
+
+FROM: 45000;
+assume(a>=-4);
+TO: 45000;
+
+FROM: 45000;
+assume(a<=-5);
+assume(a<=0);
+TO: 45001;
+
+FROM: 45001;
+assume(a>=1);
+TO: 45000;
+
+FROM: 45001;
+assume(a<=0);
+TO: 45001;

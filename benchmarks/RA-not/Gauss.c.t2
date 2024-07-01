@@ -1,0 +1,118 @@
+START: 1001;
+BUCHI: {21002, 21004, 4002, 4004};
+CUTPOINT: {21002, 21003, 21004, 21005, 1001, 4002, 4004, 4003};
+PRE: {sum>=0 && sum<=64 && n>=0 && n<=64 };
+
+
+FROM: 1001;
+assume(n>=0);
+sum := 0;
+n := n;
+TO: 4002;
+
+FROM: 1001;
+assume(n>=0);
+sum := 0;
+n := n;
+TO: 4003;
+
+FROM: 1001;
+assume(n<0);
+sum := 0;
+n := n;
+TO: 4004;
+
+FROM: 4002;
+assume(-1 * 1  +  -1 * n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4002;
+
+FROM: 4003;
+assume(-1 * 1  +  -1 * n>=0);
+assume(n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4003;
+
+FROM: 4003;
+assume(-1 * 1  +  -1 * n>=0);
+assume(n<0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4004;
+
+FROM: 4004;
+assume(-1 * 1  +  -1 * n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4004;
+
+FROM: 4002;
+assume(-1 * 1  +  n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4002;
+
+FROM: 4003;
+assume(-1 * 1  +  n>=0);
+assume(n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4003;
+
+FROM: 4003;
+assume(-1 * 1  +  n>=0);
+assume(n<0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4004;
+
+FROM: 4004;
+assume(-1 * 1  +  n>=0);
+sum := n  +  sum;
+n := -1 * 1  +  n;
+TO: 4004;
+
+FROM: 4002;
+assume(n>=0 && -1 * n>=0);
+sum := sum;
+n := n;
+TO: 21002;
+
+FROM: 4003;
+assume(n>=0 && -1 * n>=0);
+assume(n>=0);
+sum := sum;
+n := n;
+TO: 21003;
+
+FROM: 4003;
+assume(n>=0 && -1 * n>=0);
+assume(n<0);
+sum := sum;
+n := n;
+TO: 21004;
+
+FROM: 4004;
+assume(n>=0 && -1 * n>=0);
+sum := sum;
+n := n;
+TO: 21004;
+
+FROM: 21002;
+TO: 21005;
+
+FROM: 21005;
+TO: 21005;
+
+FROM: 21003;
+assume(n>=0);
+TO: 21003;
+
+FROM: 21003;
+assume(n<0);
+TO: 21004;
+
+FROM: 21004;
+TO: 21004;

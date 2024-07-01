@@ -1,0 +1,92 @@
+START: 1001;
+BUCHI: {31002};
+CUTPOINT: {31001, 31002, 1001, 7001, 31003, 7003};
+PRE: {d1old>=0 && d1old<=64 && d1>=0 && d1<=64 && x>=0 && x<=64 && d2>=0 && d2<=64 };
+
+
+FROM: 1001;
+assume(d1>=0);
+d1old := d1old;
+x := x;
+d1 := 73 * 1;
+d2 := 74 * 1;
+TO: 7001;
+
+FROM: 1001;
+assume(d1<0);
+d1old := d1old;
+x := x;
+d1 := 73 * 1;
+d2 := 74 * 1;
+TO: 7003;
+
+FROM: 7001;
+assume(x>=0);
+assume(d1>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 7001;
+
+FROM: 7001;
+assume(x>=0);
+assume(d1<0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 7003;
+
+FROM: 7003;
+assume(x>=0);
+d1old := d1;
+x := -1 * d1  +  x;
+d1 := 1  +  d2;
+d2 := 1  +  d1;
+TO: 7003;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 31001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(d1<0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 31003;
+
+FROM: 7003;
+assume(-1 * 1  +  -1 * x>=0);
+d1old := d1old;
+x := x;
+d1 := d1;
+d2 := d2;
+TO: 31003;
+
+FROM: 31001;
+assume(d1>=0);
+TO: 31002;
+
+FROM: 31002;
+assume(d1>=0);
+TO: 31002;
+
+FROM: 31001;
+assume(d1<0);
+TO: 31003;
+
+FROM: 31002;
+assume(d1<0);
+TO: 31003;
+
+FROM: 31003;
+TO: 31003;

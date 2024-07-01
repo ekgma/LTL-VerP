@@ -1,0 +1,138 @@
+START: 1000;
+BUCHI: {39001, 10001};
+CUTPOINT: {10000, 10002, 1000, 39001, 10001, 39002, 39000};
+
+PRE: {x>=-64 && x<=63 && y>=-64 && y<=63 && k>=-64 && k<=63 && c>=-64 && c<=63  && k<=256};
+
+FROM: 1000;
+c := 0;
+x := 0;
+y := 0;
+k := k;
+TO: 10000;
+
+FROM: 1000;
+assume(c<-5);
+assume(c<=0);
+c := 0;
+x := 0;
+y := 0;
+k := k;
+TO: 10001;
+
+FROM: 10000;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+c := 1  +  c;
+x := 1  +  x  +  4 * y  +  6 * y*y  +  4 * y*y*y  +  y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10000;
+
+FROM: 10000;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c<-5);
+assume(c<=0);
+c := 1  +  c;
+x := 1  +  x  +  4 * y  +  6 * y*y  +  4 * y*y*y  +  y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10001;
+
+FROM: 10001;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c<=0);
+c := 1  +  c;
+x := 1  +  x  +  4 * y  +  6 * y*y  +  4 * y*y*y  +  y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10001;
+
+FROM: 10001;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+assume(c>0);
+c := 1  +  c;
+x := 1  +  x  +  4 * y  +  6 * y*y  +  4 * y*y*y  +  y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10002;
+
+FROM: 10002;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(-1 * 1  +  -1 * c  +  k>=0);
+c := 1  +  c;
+x := 1  +  x  +  4 * y  +  6 * y*y  +  4 * y*y*y  +  y*y*y*y;
+y := 1  +  y;
+k := k;
+TO: 10002;
+
+FROM: 10000;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(c  +  -1 * k>=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 39000;
+
+FROM: 10000;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(c  +  -1 * k>=0);
+assume(c<-5);
+assume(c<=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 39001;
+
+FROM: 10001;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(c  +  -1 * k>=0);
+assume(c<=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 39001;
+
+FROM: 10001;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(c  +  -1 * k>=0);
+assume(c>0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 39002;
+
+FROM: 10002;
+assume(6*y*y*y*y*y + 15*y*y*y*y + 10*y*y*y - 30*x - y == 0);
+assume(c  +  -1 * k>=0);
+c := c;
+x := x;
+y := y;
+k := k;
+TO: 39002;
+
+FROM: 39000;
+TO: 39000;
+
+FROM: 39000;
+assume(c<-5);
+assume(c<=0);
+TO: 39001;
+
+FROM: 39001;
+assume(c<=0);
+TO: 39001;
+
+FROM: 39001;
+assume(c>0);
+TO: 39002;
+
+FROM: 39002;
+TO: 39002;

@@ -1,0 +1,27 @@
+START: 1;
+BUCHI: 2;
+
+FROM: 1;
+assume_not_line(2);
+assume(i>=0);
+TO: 1;
+    
+FROM: 1;
+assume_line(2);
+assume(i>=0);
+TO: 2;
+
+FROM: 2;
+assume(i>=0);
+TO: 2;
+
+FROM: 1;
+assume(i<0);
+TO: 3;
+
+FROM: 2;
+assume(i<0);
+TO: 3;
+
+FROM: 3;
+TO: 3;

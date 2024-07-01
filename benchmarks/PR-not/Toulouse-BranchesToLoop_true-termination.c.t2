@@ -1,0 +1,169 @@
+START: 1000;
+BUCHI: {13001, 37001};
+CUTPOINT: {37000, 13002, 13001, 1000, 13000, 37002, 37001};
+PRE: {z>=-64 && z<=63 && y>=-64 && y<=63 && x>=-64 && x<=63 };
+
+
+FROM: 1000;
+x := 1;
+y := y;
+z := z;
+TO: 13000;
+
+FROM: 1000;
+assume(x<-5);
+assume(x<=0);
+x := 1;
+y := y;
+z := z;
+TO: 13001;
+
+FROM: 1000;
+x := -1 * 1;
+y := y;
+z := z;
+TO: 13000;
+
+FROM: 1000;
+assume(x<-5);
+assume(x<=0);
+x := -1 * 1;
+y := y;
+z := z;
+TO: 13001;
+
+FROM: 13000;
+assume(99 * 1  +  -1 * y>=0 && 99 * 1  +  -1 * z>=0);
+x := x;
+y := x  +  y;
+z := -1 * x  +  z;
+TO: 13000;
+
+FROM: 13000;
+assume(99 * 1  +  -1 * y>=0 && 99 * 1  +  -1 * z>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := x  +  y;
+z := -1 * x  +  z;
+TO: 13001;
+
+FROM: 13001;
+assume(99 * 1  +  -1 * y>=0 && 99 * 1  +  -1 * z>=0);
+assume(x<=0);
+x := x;
+y := x  +  y;
+z := -1 * x  +  z;
+TO: 13001;
+
+FROM: 13001;
+assume(99 * 1  +  -1 * y>=0 && 99 * 1  +  -1 * z>=0);
+assume(x>0);
+x := x;
+y := x  +  y;
+z := -1 * x  +  z;
+TO: 13002;
+
+FROM: 13002;
+assume(99 * 1  +  -1 * y>=0 && 99 * 1  +  -1 * z>=0);
+x := x;
+y := x  +  y;
+z := -1 * x  +  z;
+TO: 13002;
+
+FROM: 13000;
+assume(-100 * 1  +  y>=0);
+x := x;
+y := y;
+z := z;
+TO: 37000;
+
+FROM: 13000;
+assume(-100 * 1  +  y>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := y;
+z := z;
+TO: 37001;
+
+FROM: 13001;
+assume(-100 * 1  +  y>=0);
+assume(x<=0);
+x := x;
+y := y;
+z := z;
+TO: 37001;
+
+FROM: 13001;
+assume(-100 * 1  +  y>=0);
+assume(x>0);
+x := x;
+y := y;
+z := z;
+TO: 37002;
+
+FROM: 13002;
+assume(-100 * 1  +  y>=0);
+x := x;
+y := y;
+z := z;
+TO: 37002;
+
+FROM: 13000;
+assume(-100 * 1  +  z>=0);
+x := x;
+y := y;
+z := z;
+TO: 37000;
+
+FROM: 13000;
+assume(-100 * 1  +  z>=0);
+assume(x<-5);
+assume(x<=0);
+x := x;
+y := y;
+z := z;
+TO: 37001;
+
+FROM: 13001;
+assume(-100 * 1  +  z>=0);
+assume(x<=0);
+x := x;
+y := y;
+z := z;
+TO: 37001;
+
+FROM: 13001;
+assume(-100 * 1  +  z>=0);
+assume(x>0);
+x := x;
+y := y;
+z := z;
+TO: 37002;
+
+FROM: 13002;
+assume(-100 * 1  +  z>=0);
+x := x;
+y := y;
+z := z;
+TO: 37002;
+
+FROM: 37000;
+TO: 37000;
+
+FROM: 37000;
+assume(x<-5);
+assume(x<=0);
+TO: 37001;
+
+FROM: 37001;
+assume(x<=0);
+TO: 37001;
+
+FROM: 37001;
+assume(x>0);
+TO: 37002;
+
+FROM: 37002;
+TO: 37002;

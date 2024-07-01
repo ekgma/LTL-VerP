@@ -1,0 +1,160 @@
+START: 1000;
+BUCHI: {79000, 7000, 1000};
+CUTPOINT: {79001, 79000, 7000, 7001, 1000};
+
+PRE: {X>=-64 && X<=63 && yx>=-64 && yx<=63 && x>=-64 && x<=63 && Y>=-64 && Y<=63 && y>=-64 && y<=63 && xy>=-64 && xy<=63 && v>=-64 && v<=63  && 1>=0};
+
+FROM: 1000;
+assume(X>=-4);
+xy := xy;
+v := -1 * X  +  2 * Y;
+X := X;
+x := 0;
+Y := Y;
+y := 0;
+yx := yx;
+TO: 7000;
+
+FROM: 1000;
+assume(X<=-5);
+assume(X<=0);
+xy := xy;
+v := -1 * X  +  2 * Y;
+X := X;
+x := 0;
+Y := Y;
+y := 0;
+yx := yx;
+TO: 7001;
+
+FROM: 7000;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(-1 * 1  +  -1 * v>=0 && X  +  -1 * x>=0);
+assume(X>=-4);
+xy := X * y;
+v := 2 * Y  +  v;
+x := 1  +  x;
+yx := Y * x;
+TO: 7000;
+
+FROM: 7000;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(-1 * 1  +  -1 * v>=0 && X  +  -1 * x>=0);
+assume(X<=-5);
+assume(X<=0);
+xy := X * y;
+v := 2 * Y  +  v;
+x := 1  +  x;
+yx := Y * x;
+TO: 7001;
+
+FROM: 7001;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(-1 * 1  +  -1 * v>=0 && X  +  -1 * x>=0);
+assume(X>=1);
+xy := X * y;
+v := 2 * Y  +  v;
+x := 1  +  x;
+yx := Y * x;
+TO: 7000;
+
+FROM: 7001;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(-1 * 1  +  -1 * v>=0 && X  +  -1 * x>=0);
+assume(X<=0);
+xy := X * y;
+v := 2 * Y  +  v;
+x := 1  +  x;
+yx := Y * x;
+TO: 7001;
+
+FROM: 7000;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(v>=0 && X  +  -1 * x>=0);
+assume(X>=-4);
+xy := X * y;
+v := -1 * X  +  2 * Y  +  v;
+x := 1  +  x;
+y := 1  +  y;
+yx := Y * x;
+TO: 7000;
+
+FROM: 7000;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(v>=0 && X  +  -1 * x>=0);
+assume(X<=-5);
+assume(X<=0);
+xy := X * y;
+v := -1 * X  +  2 * Y  +  v;
+x := 1  +  x;
+y := 1  +  y;
+yx := Y * x;
+TO: 7001;
+
+FROM: 7001;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(v>=0 && X  +  -1 * x>=0);
+assume(X>=1);
+xy := X * y;
+v := -1 * X  +  2 * Y  +  v;
+x := 1  +  x;
+y := 1  +  y;
+yx := Y * x;
+TO: 7000;
+
+FROM: 7001;
+assume(2*X*Y - 2*X*Y - X +  2*Y - v == 0);
+assume(v>=0 && X  +  -1 * x>=0);
+assume(X<=0);
+xy := X * y;
+v := -1 * X  +  2 * Y  +  v;
+x := 1  +  x;
+y := 1  +  y;
+yx := Y * x;
+TO: 7001;
+
+FROM: 7000;
+assume(-1 * 1  +  -1 * X  +  x>=0);
+assume(X>=-4);
+xy := x * y;
+yx := Y * x;
+TO: 79000;
+
+FROM: 7000;
+assume(-1 * 1  +  -1 * X  +  x>=0);
+assume(X<=-5);
+assume(X<=0);
+xy := x * y;
+yx := Y * x;
+TO: 79001;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * X  +  x>=0);
+assume(X>=1);
+xy := x * y;
+yx := Y * x;
+TO: 79000;
+
+FROM: 7001;
+assume(-1 * 1  +  -1 * X  +  x>=0);
+assume(X<=0);
+xy := x * y;
+yx := Y * x;
+TO: 79001;
+
+FROM: 79000;
+assume(X>=-4);
+TO: 79000;
+
+FROM: 79000;
+assume(X<=-5);
+assume(X<=0);
+TO: 79001;
+
+FROM: 79001;
+assume(X>=1);
+TO: 79000;
+
+FROM: 79001;
+assume(X<=0);
+TO: 79001;

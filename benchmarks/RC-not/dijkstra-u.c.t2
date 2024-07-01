@@ -1,0 +1,356 @@
+START: 1001;
+BUCHI: {13002, 75002, 29002};
+CUTPOINT: {29002, 13001, 29003, 75001, 75002, 75003, 13003, 29001, 1001, 13002};
+
+PRE: {n>=-64 && n<=63 && h>=-64 && h<=63 && q>=-64 && q<=63 && p>=-64 && p<=63 && r>=-64 && r<=63  && n <= 1073741823};
+
+FROM: 1001;
+p := 0;
+q := 1;
+r := n;
+h := 0;
+n := n;
+TO: 13001;
+
+FROM: 1001;
+assume(h<0);
+p := 0;
+q := 1;
+r := n;
+h := 0;
+n := n;
+TO: 13002;
+
+FROM: 13001;
+assume(n  +  -1 * q>=0);
+assume(4*q>q);
+q := 4 * q;
+TO: 13001;
+
+FROM: 13001;
+assume(n  +  -1 * q>=0);
+assume(4*q>q);
+assume(h<0);
+q := 4 * q;
+TO: 13002;
+
+FROM: 13002;
+assume(n  +  -1 * q>=0);
+assume(4*q>q);
+assume(h<0);
+q := 4 * q;
+TO: 13002;
+
+FROM: 13002;
+assume(n  +  -1 * q>=0);
+assume(4*q>q);
+assume(h>=0);
+q := 4 * q;
+TO: 13003;
+
+FROM: 13003;
+assume(n  +  -1 * q>=0);
+assume(4*q>q);
+q := 4 * q;
+TO: 13003;
+
+FROM: 13001;
+assume(-1 * 1  +  -1 * n  +  q>=0);
+TO: 29001;
+
+FROM: 13001;
+assume(-1 * 1  +  -1 * n  +  q>=0);
+assume(h<0);
+TO: 29002;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * n  +  q>=0);
+assume(h<0);
+TO: 29002;
+
+FROM: 13002;
+assume(-1 * 1  +  -1 * n  +  q>=0);
+assume(h>=0);
+TO: 29003;
+
+FROM: 13003;
+assume(-1 * 1  +  -1 * n  +  q>=0);
+TO: 29003;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -1 * q>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -1 * q>=0);
+assume(h<0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -1 * q>=0);
+assume(h<0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -1 * q>=0);
+assume(h>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29003;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -1 * q>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -1 * q>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -1 * q>=0);
+assume(h<0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -1 * q>=0);
+assume(h<0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -1 * q>=0);
+assume(h>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29003;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -1 * q>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -2 * 1  +  q>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -2 * 1  +  q>=0);
+assume(h<0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -2 * 1  +  q>=0);
+assume(h<0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -2 * 1  +  q>=0);
+assume(h>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29003;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * p  +  (-1/4) * q  +  r>=0 && -2 * 1  +  q>=0);
+p := (1/2) * p  +  (1/4) * q;
+q := (1/4) * q;
+r := -1 * p  +  (-1/4) * q  +  r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -2 * 1  +  q>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29001;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -2 * 1  +  q>=0);
+assume(h<0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -2 * 1  +  q>=0);
+assume(h<0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -2 * 1  +  q>=0);
+assume(h>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29003;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(q/4<q && p+q/4>=0);
+assume(-1 * 1  +  p  +  (1/4) * q  +  -1 * r>=0 && -2 * 1  +  q>=0);
+p := (1/2) * p;
+q := (1/4) * q;
+r := r;
+h := p  +  (1/4) * q;
+n := n;
+TO: 29003;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(-1 * 1  +  q>=0 && 1  +  -1 * q>=0);
+TO: 75001;
+
+FROM: 29001;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(-1 * 1  +  q>=0 && 1  +  -1 * q>=0);
+assume(h<0);
+TO: 75002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(-1 * 1  +  q>=0 && 1  +  -1 * q>=0);
+assume(h<0);
+TO: 75002;
+
+FROM: 29002;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(-1 * 1  +  q>=0 && 1  +  -1 * q>=0);
+assume(h>=0);
+TO: 75003;
+
+FROM: 29003;
+assume(r < 2 * p + q && p*p + r*q == n*q && h * h * h - 12 * h * n * q + 16 * n * p * q - h * q * q - 4 * p * q * q + 12 * h * q * r - 16 * p * q * r == 0 && h * h * n - 4 * h * n * p + 4 * (n * n) * q - n * q * q - h * h * r + 4 * h * p * r - 8 * n * q * r + q * q * r + 4 * q * r * r == 0 && p * p - n * q + q * r == 0);
+assume(-1 * 1  +  q>=0 && 1  +  -1 * q>=0);
+TO: 75003;
+
+FROM: 75001;
+TO: 75001;
+
+FROM: 75001;
+assume(h<0);
+TO: 75002;
+
+FROM: 75002;
+assume(h<0);
+TO: 75002;
+
+FROM: 75002;
+assume(h>=0);
+TO: 75003;
+
+FROM: 75003;
+TO: 75003;

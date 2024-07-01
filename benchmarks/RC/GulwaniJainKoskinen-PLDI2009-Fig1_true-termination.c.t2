@@ -1,0 +1,225 @@
+START: 1001;
+BUCHI: {20002, 52002};
+CUTPOINT: {20002, 1001, 20001, 52001, 52002};
+PRE: {maxId>=-64 && maxId<=63 && id>=-64 && id<=63 && tmp>=-64 && tmp<=63 };
+
+
+FROM: 1001;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20001;
+
+FROM: 1001;
+assume(id>=0 && -1 * 1  +  -1 * id  +  maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  id;
+id := id;
+TO: 20002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * id>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 1001;
+assume(id  +  -1 * maxId>=0);
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 1001;
+assume(id  +  -1 * maxId>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  id  +  -1 * tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20001;
+
+FROM: 20002;
+assume(maxId  +  -1 * tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 1  +  tmp;
+id := id;
+TO: 20002;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20001;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id<0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20001;
+
+FROM: 20002;
+assume(-1 * 1  +  -1 * maxId  +  tmp>=0 && -1 * 1  +  -1 * id  +  tmp>=0);
+assume(id>=0);
+maxId := maxId;
+tmp := 0;
+id := id;
+TO: 20002;
+
+FROM: 20001;
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 20001;
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 20002;
+assume(id<0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52001;
+
+FROM: 20002;
+assume(id>=0);
+maxId := maxId;
+tmp := tmp;
+id := id;
+TO: 52002;
+
+FROM: 52001;
+assume(id<0);
+TO: 52001;
+
+FROM: 52001;
+assume(id>=0);
+TO: 52002;
+
+FROM: 52002;
+assume(id<0);
+TO: 52001;
+
+FROM: 52002;
+assume(id>=0);
+TO: 52002;

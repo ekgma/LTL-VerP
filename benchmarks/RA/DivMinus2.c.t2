@@ -1,0 +1,248 @@
+START: 1001;
+BUCHI: {62002};
+CUTPOINT: {22001, 4003, 62002, 62001, 4001, 1001, 22003, 62003};
+PRE: {x>=0 && x<=64 && res>=0 && res<=64 && ytmp>=0 && ytmp<=64 && y>=0 && y<=64 };
+
+
+FROM: 1001;
+assume(res>=0);
+res := 0;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 4001;
+
+FROM: 1001;
+assume(res<0);
+res := 0;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 4003;
+
+FROM: 22001;
+assume(-1 * 1  +  ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+assume(res>=0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22001;
+
+FROM: 22001;
+assume(-1 * 1  +  ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+assume(res<0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22003;
+assume(-1 * 1  +  ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22001;
+assume(-1 * ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+assume(res>=0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22001;
+
+FROM: 22001;
+assume(-1 * ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+assume(res<0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22003;
+assume(-1 * ytmp>=0 && -1 * 1  +  -1 * ytmp>=0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22001;
+assume(-1 * 1  +  ytmp>=0);
+assume(res>=0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22001;
+
+FROM: 22001;
+assume(-1 * 1  +  ytmp>=0);
+assume(res<0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22003;
+assume(-1 * 1  +  ytmp>=0);
+res := res;
+ytmp := -1 * 1  +  ytmp;
+x := -1 * 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22001;
+assume(-1 * ytmp>=0 && -1 * 1  +  ytmp>=0);
+assume(res>=0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22001;
+
+FROM: 22001;
+assume(-1 * ytmp>=0 && -1 * 1  +  ytmp>=0);
+assume(res<0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22003;
+assume(-1 * ytmp>=0 && -1 * 1  +  ytmp>=0);
+res := res;
+ytmp := 1  +  ytmp;
+x := 1  +  x;
+y := y;
+TO: 22003;
+
+FROM: 22001;
+assume(ytmp>=0 && -1 * ytmp>=0);
+assume(res>=0);
+res := 1  +  res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 4001;
+
+FROM: 22001;
+assume(ytmp>=0 && -1 * ytmp>=0);
+assume(res<0);
+res := 1  +  res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 4003;
+
+FROM: 22003;
+assume(ytmp>=0 && -1 * ytmp>=0);
+res := 1  +  res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 4003;
+
+FROM: 4001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(res>=0);
+res := res;
+ytmp := y;
+x := x;
+y := y;
+TO: 22001;
+
+FROM: 4001;
+assume(x  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(res<0);
+res := res;
+ytmp := y;
+x := x;
+y := y;
+TO: 22003;
+
+FROM: 4003;
+assume(x  +  -1 * y>=0 && -1 * 1  +  y>=0);
+res := res;
+ytmp := y;
+x := x;
+y := y;
+TO: 22003;
+
+FROM: 4001;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+assume(res>=0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62001;
+
+FROM: 4001;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+assume(res<0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62003;
+
+FROM: 4003;
+assume(-1 * 1  +  -1 * x  +  y>=0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62003;
+
+FROM: 4001;
+assume(-1 * y>=0);
+assume(res>=0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62001;
+
+FROM: 4001;
+assume(-1 * y>=0);
+assume(res<0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62003;
+
+FROM: 4003;
+assume(-1 * y>=0);
+res := res;
+ytmp := ytmp;
+x := x;
+y := y;
+TO: 62003;
+
+FROM: 62001;
+assume(res>=0);
+TO: 62002;
+
+FROM: 62002;
+assume(res>=0);
+TO: 62002;
+
+FROM: 62001;
+assume(res<0);
+TO: 62003;
+
+FROM: 62002;
+assume(res<0);
+TO: 62003;
+
+FROM: 62003;
+TO: 62003;

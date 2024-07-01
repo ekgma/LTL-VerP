@@ -1,0 +1,388 @@
+START: 1001;
+BUCHI: {95002};
+CUTPOINT: {1001, 95003, 74001, 95001, 1003, 95002, 57001, 57003, 74003};
+PRE: {tmp>=0 && tmp<=64 && x>=0 && x<=64 && y>=0 && y<=64 && xtmp>=0 && xtmp<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57001;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1003;
+assume(-1 * 1  +  x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1001;
+assume(-1 * x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74001;
+
+FROM: 1001;
+assume(-1 * x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1003;
+assume(-1 * x>=0 && -1 * y>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 57001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1001;
+assume(x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 74001;
+
+FROM: 1001;
+assume(x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1003;
+assume(x>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := -1 * x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  y>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57001;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  y>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1003;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  y>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1001;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74001;
+
+FROM: 1001;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1003;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57001;
+
+FROM: 1001;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1003;
+assume(-1 * 1  +  x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 1001;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74001;
+
+FROM: 1001;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+assume(tmp<0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1003;
+assume(-1 * x>=0 && y>=0 && -1 * 1  +  -1 * y>=0 && -1 * 1  +  y>=0 && -1 * 1  +  x>=0);
+tmp := y;
+xtmp := x;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 1001;
+assume(-1 * y>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95001;
+
+FROM: 1001;
+assume(-1 * y>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95003;
+
+FROM: 1003;
+assume(-1 * y>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95003;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95001;
+
+FROM: 1001;
+assume(-1 * x>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95003;
+
+FROM: 1003;
+assume(-1 * x>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := x;
+y := y;
+TO: 95003;
+
+FROM: 57001;
+assume(xtmp  +  -1 * y>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 57001;
+
+FROM: 57001;
+assume(xtmp  +  -1 * y>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 57003;
+assume(xtmp  +  -1 * y>=0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 57003;
+
+FROM: 57001;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1001;
+
+FROM: 57001;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1003;
+
+FROM: 57003;
+assume(-1 * 1  +  -1 * xtmp  +  y>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1003;
+
+FROM: 74001;
+assume(-1 * 1  +  -1 * xtmp>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 74001;
+
+FROM: 74001;
+assume(-1 * 1  +  -1 * xtmp>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 74003;
+assume(-1 * 1  +  -1 * xtmp>=0);
+tmp := tmp;
+xtmp := xtmp  +  -1 * y;
+x := x;
+y := y;
+TO: 74003;
+
+FROM: 74001;
+assume(xtmp>=0);
+assume(tmp>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1001;
+
+FROM: 74001;
+assume(xtmp>=0);
+assume(tmp<0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1003;
+
+FROM: 74003;
+assume(xtmp>=0);
+tmp := tmp;
+xtmp := xtmp;
+x := tmp;
+y := xtmp;
+TO: 1003;
+
+FROM: 95001;
+assume(tmp>=0);
+TO: 95002;
+
+FROM: 95002;
+assume(tmp>=0);
+TO: 95002;
+
+FROM: 95001;
+assume(tmp<0);
+TO: 95003;
+
+FROM: 95002;
+assume(tmp<0);
+TO: 95003;
+
+FROM: 95003;
+TO: 95003;

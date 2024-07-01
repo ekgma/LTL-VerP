@@ -1,0 +1,92 @@
+START: 1001;
+BUCHI: {7002, 29002, 29004, 7004};
+CUTPOINT: {1001, 7003, 29005, 7002, 29004, 29002, 7004, 29003};
+PRE: {b>=0 && b<=64 && a>=0 && a<=64 };
+
+
+FROM: 1001;
+assume(a>=0);
+a := 1;
+b := 2 * 1;
+TO: 7002;
+
+FROM: 1001;
+assume(a>=0);
+a := 1;
+b := 2 * 1;
+TO: 7003;
+
+FROM: 1001;
+assume(a<0);
+a := 1;
+b := 2 * 1;
+TO: 7004;
+
+FROM: 7002;
+assume(4 * 1  +  -1 * a  +  -1 * b>=0);
+a := 0 * a  +  b;
+b := a  +  0 * b;
+TO: 7002;
+
+FROM: 7003;
+assume(4 * 1  +  -1 * a  +  -1 * b>=0);
+assume(a>=0);
+a := 0 * a  +  b;
+b := a  +  0 * b;
+TO: 7003;
+
+FROM: 7003;
+assume(4 * 1  +  -1 * a  +  -1 * b>=0);
+assume(a<0);
+a := 0 * a  +  b;
+b := a  +  0 * b;
+TO: 7004;
+
+FROM: 7004;
+assume(4 * 1  +  -1 * a  +  -1 * b>=0);
+a := 0 * a  +  b;
+b := a  +  0 * b;
+TO: 7004;
+
+FROM: 7002;
+assume(-5 * 1  +  a  +  b>=0);
+a := a;
+b := b;
+TO: 29002;
+
+FROM: 7003;
+assume(-5 * 1  +  a  +  b>=0);
+assume(a>=0);
+a := a;
+b := b;
+TO: 29003;
+
+FROM: 7003;
+assume(-5 * 1  +  a  +  b>=0);
+assume(a<0);
+a := a;
+b := b;
+TO: 29004;
+
+FROM: 7004;
+assume(-5 * 1  +  a  +  b>=0);
+a := a;
+b := b;
+TO: 29004;
+
+FROM: 29002;
+TO: 29005;
+
+FROM: 29005;
+TO: 29005;
+
+FROM: 29003;
+assume(a>=0);
+TO: 29003;
+
+FROM: 29003;
+assume(a<0);
+TO: 29004;
+
+FROM: 29004;
+TO: 29004;

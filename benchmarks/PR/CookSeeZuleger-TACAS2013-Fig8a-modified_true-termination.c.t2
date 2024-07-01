@@ -1,0 +1,167 @@
+START: 1000;
+BUCHI: {28000, 1000};
+CUTPOINT: {1001, 28000, 28001, 1000};
+PRE: {x>=-64 && x<=63 && K>=-64 && K<=63 };
+
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * K  +  x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K>=-4);
+x := -1 * 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * K  +  x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K<=-5);
+assume(K<=0);
+x := -1 * 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * K  +  x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K>=1);
+x := -1 * 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * K  +  x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K<=0);
+x := -1 * 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1000;
+assume(K  +  -1 * x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K>=-4);
+x := 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1000;
+assume(K  +  -1 * x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K<=-5);
+assume(K<=0);
+x := 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1001;
+assume(K  +  -1 * x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K>=1);
+x := 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1001;
+assume(K  +  -1 * x>=0 && -1 * 1  +  K  +  -1 * x>=0);
+assume(K<=0);
+x := 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * K  +  x>=0);
+assume(K>=-4);
+x := -1 * 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1000;
+assume(-1 * 1  +  -1 * K  +  x>=0);
+assume(K<=-5);
+assume(K<=0);
+x := -1 * 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * K  +  x>=0);
+assume(K>=1);
+x := -1 * 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * K  +  x>=0);
+assume(K<=0);
+x := -1 * 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1000;
+assume(K  +  -1 * x>=0 && -1 * 1  +  -1 * K  +  x>=0);
+assume(K>=-4);
+x := 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1000;
+assume(K  +  -1 * x>=0 && -1 * 1  +  -1 * K  +  x>=0);
+assume(K<=-5);
+assume(K<=0);
+x := 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1001;
+assume(K  +  -1 * x>=0 && -1 * 1  +  -1 * K  +  x>=0);
+assume(K>=1);
+x := 1  +  x;
+K := K;
+TO: 1000;
+
+FROM: 1001;
+assume(K  +  -1 * x>=0 && -1 * 1  +  -1 * K  +  x>=0);
+assume(K<=0);
+x := 1  +  x;
+K := K;
+TO: 1001;
+
+FROM: 1000;
+assume(-1 * K  +  x>=0 && K  +  -1 * x>=0);
+assume(K>=-4);
+x := x;
+K := K;
+TO: 28000;
+
+FROM: 1000;
+assume(-1 * K  +  x>=0 && K  +  -1 * x>=0);
+assume(K<=-5);
+assume(K<=0);
+x := x;
+K := K;
+TO: 28001;
+
+FROM: 1001;
+assume(-1 * K  +  x>=0 && K  +  -1 * x>=0);
+assume(K>=1);
+x := x;
+K := K;
+TO: 28000;
+
+FROM: 1001;
+assume(-1 * K  +  x>=0 && K  +  -1 * x>=0);
+assume(K<=0);
+x := x;
+K := K;
+TO: 28001;
+
+FROM: 28000;
+assume(K>=-4);
+TO: 28000;
+
+FROM: 28000;
+assume(K<=-5);
+assume(K<=0);
+TO: 28001;
+
+FROM: 28001;
+assume(K>=1);
+TO: 28000;
+
+FROM: 28001;
+assume(K<=0);
+TO: 28001;

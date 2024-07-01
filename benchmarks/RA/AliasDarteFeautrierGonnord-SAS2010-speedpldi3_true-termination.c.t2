@@ -1,0 +1,156 @@
+START: 1001;
+BUCHI: {55002};
+CUTPOINT: {22003, 55001, 55003, 22001, 55002, 1001};
+PRE: {m>=0 && m<=64 && j>=0 && j<=64 && n>=0 && n<=64 && i>=0 && i<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  m>=0 && -1 * 1  +  -1 * m  +  n>=0);
+assume(i>=0);
+i := 0;
+j := 0;
+m := m;
+n := n;
+TO: 22001;
+
+FROM: 1001;
+assume(-1 * 1  +  m>=0 && -1 * 1  +  -1 * m  +  n>=0);
+assume(i<0);
+i := 0;
+j := 0;
+m := m;
+n := n;
+TO: 22003;
+
+FROM: 1001;
+assume(-1 * m>=0);
+assume(i>=0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55001;
+
+FROM: 1001;
+assume(-1 * m>=0);
+assume(i<0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55003;
+
+FROM: 1001;
+assume(m  +  -1 * n>=0);
+assume(i>=0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55001;
+
+FROM: 1001;
+assume(m  +  -1 * n>=0);
+assume(i<0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55003;
+
+FROM: 22001;
+assume(-1 * 1  +  -1 * j  +  m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+assume(i>=0);
+i := i;
+j := 1  +  j;
+m := m;
+n := n;
+TO: 22001;
+
+FROM: 22001;
+assume(-1 * 1  +  -1 * j  +  m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+assume(i<0);
+i := i;
+j := 1  +  j;
+m := m;
+n := n;
+TO: 22003;
+
+FROM: 22003;
+assume(-1 * 1  +  -1 * j  +  m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+i := i;
+j := 1  +  j;
+m := m;
+n := n;
+TO: 22003;
+
+FROM: 22001;
+assume(j  +  -1 * m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+assume(i>=0);
+i := 1  +  i;
+j := 0;
+m := m;
+n := n;
+TO: 22001;
+
+FROM: 22001;
+assume(j  +  -1 * m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+assume(i<0);
+i := 1  +  i;
+j := 0;
+m := m;
+n := n;
+TO: 22003;
+
+FROM: 22003;
+assume(j  +  -1 * m>=0 && -1 * 1  +  -1 * i  +  n>=0);
+i := 1  +  i;
+j := 0;
+m := m;
+n := n;
+TO: 22003;
+
+FROM: 22001;
+assume(i  +  -1 * n>=0);
+assume(i>=0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55001;
+
+FROM: 22001;
+assume(i  +  -1 * n>=0);
+assume(i<0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55003;
+
+FROM: 22003;
+assume(i  +  -1 * n>=0);
+i := i;
+j := j;
+m := m;
+n := n;
+TO: 55003;
+
+FROM: 55001;
+assume(i>=0);
+TO: 55002;
+
+FROM: 55002;
+assume(i>=0);
+TO: 55002;
+
+FROM: 55001;
+assume(i<0);
+TO: 55003;
+
+FROM: 55002;
+assume(i<0);
+TO: 55003;
+
+FROM: 55003;
+TO: 55003;

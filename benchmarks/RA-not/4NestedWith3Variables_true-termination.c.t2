@@ -1,0 +1,144 @@
+START: 1001;
+BUCHI: {42002, 42004, 1002, 1004};
+CUTPOINT: {1004, 1003, 1001, 42005, 1002, 42004, 42003, 42002};
+PRE: {q>=0 && q<=64 && olda>=0 && olda<=64 && a>=0 && a<=64 && b>=0 && b<=64 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  q>=0);
+assume(a>=0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1002;
+
+FROM: 1001;
+assume(-1 * 1  +  q>=0);
+assume(a>=0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1003;
+
+FROM: 1001;
+assume(-1 * 1  +  q>=0);
+assume(a<0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1004;
+
+FROM: 1002;
+assume(-1 * 1  +  q>=0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1002;
+
+FROM: 1003;
+assume(-1 * 1  +  q>=0);
+assume(a>=0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1003;
+
+FROM: 1003;
+assume(-1 * 1  +  q>=0);
+assume(a<0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1004;
+
+FROM: 1004;
+assume(-1 * 1  +  q>=0);
+q := -1 * 1  +  a  +  q;
+a := 3 * a  +  -4 * b;
+b := 4 * a  +  3 * b;
+olda := a;
+TO: 1004;
+
+FROM: 1001;
+assume(-1 * q>=0);
+assume(a>=0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42002;
+
+FROM: 1001;
+assume(-1 * q>=0);
+assume(a>=0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42003;
+
+FROM: 1001;
+assume(-1 * q>=0);
+assume(a<0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42004;
+
+FROM: 1002;
+assume(-1 * q>=0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42002;
+
+FROM: 1003;
+assume(-1 * q>=0);
+assume(a>=0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42003;
+
+FROM: 1003;
+assume(-1 * q>=0);
+assume(a<0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42004;
+
+FROM: 1004;
+assume(-1 * q>=0);
+q := q;
+a := a;
+b := b;
+olda := olda;
+TO: 42004;
+
+FROM: 42002;
+TO: 42005;
+
+FROM: 42005;
+TO: 42005;
+
+FROM: 42003;
+assume(a>=0);
+TO: 42003;
+
+FROM: 42003;
+assume(a<0);
+TO: 42004;
+
+FROM: 42004;
+TO: 42004;

@@ -1,0 +1,112 @@
+START: 1001;
+BUCHI: {15001, 1001, 45001};
+CUTPOINT: {15002, 45001, 15001, 45002, 1001};
+PRE: {x>=-64 && x<=63 && max>=-64 && max<=63 && a>=-64 && a<=63 };
+
+
+FROM: 1001;
+assume(-1 * 1  +  max>=0);
+assume(a>=-64 && a<=63);
+a := 0;
+max := max;
+x := 1;
+TO: 15001;
+
+FROM: 1001;
+assume(-1 * 1  +  max>=0);
+assume(a<-64 || a>63);
+a := 0;
+max := max;
+x := 1;
+TO: 15002;
+
+FROM: 1001;
+assume(-1 * max>=0);
+assume(a>=-64 && a<=63);
+a := a;
+max := max;
+x := x;
+TO: 45001;
+
+FROM: 1001;
+assume(-1 * max>=0);
+assume(a<-64 || a>63);
+a := a;
+max := max;
+x := x;
+TO: 45002;
+
+FROM: 15001;
+assume(max  +  -1 * x>=0);
+assume(a>=-64 && a<=63);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15001;
+
+FROM: 15001;
+assume(max  +  -1 * x>=0);
+assume(a<-64 || a>63);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15002;
+assume(max  +  -1 * x>=0);
+a := 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15001;
+assume(max  +  -1 * x>=0);
+assume(a>=-64 && a<=63);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15001;
+
+FROM: 15001;
+assume(max  +  -1 * x>=0);
+assume(a<-64 || a>63);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15002;
+assume(max  +  -1 * x>=0);
+a := -1 * 1  +  a;
+max := max;
+x := 1  +  x;
+TO: 15002;
+
+FROM: 15001;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+assume(a>=-64 && a<=63);
+a := a;
+max := max;
+x := x;
+TO: 45001;
+
+FROM: 15001;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+assume(a<-64 || a>63);
+a := a;
+max := max;
+x := x;
+TO: 45002;
+
+FROM: 15002;
+assume(-1 * 1  +  -1 * max  +  x>=0);
+a := a;
+max := max;
+x := x;
+TO: 45002;
+
+FROM: 45001;
+TO: 45002;
+
+FROM: 45002;
+TO: 45002;

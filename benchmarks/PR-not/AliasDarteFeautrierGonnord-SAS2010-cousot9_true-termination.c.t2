@@ -1,0 +1,155 @@
+START: 1000;
+BUCHI: {34001, 4001};
+CUTPOINT: {34000, 4002, 4000, 34001, 34002, 1000, 4001};
+PRE: {j>=-64 && j<=63 && N>=-64 && N<=63 && i>=-64 && i<=63 };
+
+
+FROM: 1000;
+i := N;
+j := j;
+N := N;
+TO: 4000;
+
+FROM: 1000;
+assume(N<-5);
+assume(N<=0);
+i := N;
+j := j;
+N := N;
+TO: 4001;
+
+FROM: 4000;
+assume(-1 * 1  +  j>=0 && -1 * 1  +  i>=0);
+i := i;
+j := -1 * 1  +  j;
+N := N;
+TO: 4000;
+
+FROM: 4000;
+assume(-1 * 1  +  j>=0 && -1 * 1  +  i>=0);
+assume(N<-5);
+assume(N<=0);
+i := i;
+j := -1 * 1  +  j;
+N := N;
+TO: 4001;
+
+FROM: 4001;
+assume(-1 * 1  +  j>=0 && -1 * 1  +  i>=0);
+assume(N<=0);
+i := i;
+j := -1 * 1  +  j;
+N := N;
+TO: 4001;
+
+FROM: 4001;
+assume(-1 * 1  +  j>=0 && -1 * 1  +  i>=0);
+assume(N>0);
+i := i;
+j := -1 * 1  +  j;
+N := N;
+TO: 4002;
+
+FROM: 4002;
+assume(-1 * 1  +  j>=0 && -1 * 1  +  i>=0);
+i := i;
+j := -1 * 1  +  j;
+N := N;
+TO: 4002;
+
+FROM: 4000;
+assume(-1 * j>=0 && -1 * 1  +  i>=0);
+i := -1 * 1  +  i;
+j := N;
+N := N;
+TO: 4000;
+
+FROM: 4000;
+assume(-1 * j>=0 && -1 * 1  +  i>=0);
+assume(N<-5);
+assume(N<=0);
+i := -1 * 1  +  i;
+j := N;
+N := N;
+TO: 4001;
+
+FROM: 4001;
+assume(-1 * j>=0 && -1 * 1  +  i>=0);
+assume(N<=0);
+i := -1 * 1  +  i;
+j := N;
+N := N;
+TO: 4001;
+
+FROM: 4001;
+assume(-1 * j>=0 && -1 * 1  +  i>=0);
+assume(N>0);
+i := -1 * 1  +  i;
+j := N;
+N := N;
+TO: 4002;
+
+FROM: 4002;
+assume(-1 * j>=0 && -1 * 1  +  i>=0);
+i := -1 * 1  +  i;
+j := N;
+N := N;
+TO: 4002;
+
+FROM: 4000;
+assume(-1 * i>=0);
+i := i;
+j := j;
+N := N;
+TO: 34000;
+
+FROM: 4000;
+assume(-1 * i>=0);
+assume(N<-5);
+assume(N<=0);
+i := i;
+j := j;
+N := N;
+TO: 34001;
+
+FROM: 4001;
+assume(-1 * i>=0);
+assume(N<=0);
+i := i;
+j := j;
+N := N;
+TO: 34001;
+
+FROM: 4001;
+assume(-1 * i>=0);
+assume(N>0);
+i := i;
+j := j;
+N := N;
+TO: 34002;
+
+FROM: 4002;
+assume(-1 * i>=0);
+i := i;
+j := j;
+N := N;
+TO: 34002;
+
+FROM: 34000;
+TO: 34000;
+
+FROM: 34000;
+assume(N<-5);
+assume(N<=0);
+TO: 34001;
+
+FROM: 34001;
+assume(N<=0);
+TO: 34001;
+
+FROM: 34001;
+assume(N>0);
+TO: 34002;
+
+FROM: 34002;
+TO: 34002;

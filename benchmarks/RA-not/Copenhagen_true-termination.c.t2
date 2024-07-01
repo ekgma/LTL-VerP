@@ -1,0 +1,184 @@
+START: 1001;
+BUCHI: {1004, 28002, 1002, 28004};
+CUTPOINT: {1004, 1001, 1002, 28005, 28004, 1003, 28002, 28003};
+PRE: {y>=0 && y<=64 && oldx>=0 && oldx<=64 && x>=0 && x<=64 };
+
+
+FROM: 1001;
+assume(x>=0 && y>=0);
+assume(oldx>=0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1002;
+
+FROM: 1001;
+assume(x>=0 && y>=0);
+assume(oldx>=0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1003;
+
+FROM: 1001;
+assume(x>=0 && y>=0);
+assume(oldx<0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1004;
+
+FROM: 1002;
+assume(x>=0 && y>=0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1002;
+
+FROM: 1003;
+assume(x>=0 && y>=0);
+assume(oldx>=0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1003;
+
+FROM: 1003;
+assume(x>=0 && y>=0);
+assume(oldx<0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1004;
+
+FROM: 1004;
+assume(x>=0 && y>=0);
+oldx := x;
+x := -1 * 1  +  y;
+y := -1 * 1  +  x;
+TO: 1004;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * x>=0);
+assume(oldx<0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 1002;
+assume(-1 * 1  +  -1 * x>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28002;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * x>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28003;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * x>=0);
+assume(oldx<0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 1004;
+assume(-1 * 1  +  -1 * x>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * y>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28002;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * y>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28003;
+
+FROM: 1001;
+assume(-1 * 1  +  -1 * y>=0);
+assume(oldx<0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 1002;
+assume(-1 * 1  +  -1 * y>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28002;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * y>=0);
+assume(oldx>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28003;
+
+FROM: 1003;
+assume(-1 * 1  +  -1 * y>=0);
+assume(oldx<0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 1004;
+assume(-1 * 1  +  -1 * y>=0);
+oldx := oldx;
+x := x;
+y := y;
+TO: 28004;
+
+FROM: 28002;
+TO: 28005;
+
+FROM: 28005;
+TO: 28005;
+
+FROM: 28003;
+assume(oldx>=0);
+TO: 28003;
+
+FROM: 28003;
+assume(oldx<0);
+TO: 28004;
+
+FROM: 28004;
+TO: 28004;

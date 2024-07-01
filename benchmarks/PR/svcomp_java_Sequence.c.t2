@@ -1,0 +1,169 @@
+START: 1000;
+BUCHI: {1000, 27000, 44000, 7000};
+CUTPOINT: {44000, 44001, 7000, 7001, 27001, 1000, 27000};
+PRE: {j>=-64 && j<=63 && i>=-64 && i<=63 && c>=-64 && c<=63 };
+
+
+FROM: 1000;
+assume(c>=-4);
+c := 0;
+i := 0;
+j := j;
+TO: 7000;
+
+FROM: 1000;
+assume(c<=-5);
+assume(c<=0);
+c := 0;
+i := 0;
+j := j;
+TO: 7001;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * i>=0);
+assume(c>=-4);
+c := 1  +  c;
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * i>=0);
+assume(c<=-5);
+assume(c<=0);
+c := 1  +  c;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * i>=0);
+assume(c>=1);
+c := 1  +  c;
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * i>=0);
+assume(c<=0);
+c := 1  +  c;
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7000;
+assume(-100 * 1  +  i>=0);
+assume(c>=-4);
+c := c;
+i := i;
+j := 5 * 1;
+TO: 27000;
+
+FROM: 7000;
+assume(-100 * 1  +  i>=0);
+assume(c<=-5);
+assume(c<=0);
+c := c;
+i := i;
+j := 5 * 1;
+TO: 27001;
+
+FROM: 7001;
+assume(-100 * 1  +  i>=0);
+assume(c>=1);
+c := c;
+i := i;
+j := 5 * 1;
+TO: 27000;
+
+FROM: 7001;
+assume(-100 * 1  +  i>=0);
+assume(c<=0);
+c := c;
+i := i;
+j := 5 * 1;
+TO: 27001;
+
+FROM: 27000;
+assume(20 * 1  +  -1 * j>=0);
+assume(c>=-4);
+c := 1  +  c;
+i := i;
+j := 3 * 1  +  j;
+TO: 27000;
+
+FROM: 27000;
+assume(20 * 1  +  -1 * j>=0);
+assume(c<=-5);
+assume(c<=0);
+c := 1  +  c;
+i := i;
+j := 3 * 1  +  j;
+TO: 27001;
+
+FROM: 27001;
+assume(20 * 1  +  -1 * j>=0);
+assume(c>=1);
+c := 1  +  c;
+i := i;
+j := 3 * 1  +  j;
+TO: 27000;
+
+FROM: 27001;
+assume(20 * 1  +  -1 * j>=0);
+assume(c<=0);
+c := 1  +  c;
+i := i;
+j := 3 * 1  +  j;
+TO: 27001;
+
+FROM: 27000;
+assume(-21 * 1  +  j>=0);
+assume(c>=-4);
+c := c;
+i := i;
+j := j;
+TO: 44000;
+
+FROM: 27000;
+assume(-21 * 1  +  j>=0);
+assume(c<=-5);
+assume(c<=0);
+c := c;
+i := i;
+j := j;
+TO: 44001;
+
+FROM: 27001;
+assume(-21 * 1  +  j>=0);
+assume(c>=1);
+c := c;
+i := i;
+j := j;
+TO: 44000;
+
+FROM: 27001;
+assume(-21 * 1  +  j>=0);
+assume(c<=0);
+c := c;
+i := i;
+j := j;
+TO: 44001;
+
+FROM: 44000;
+assume(c>=-4);
+TO: 44000;
+
+FROM: 44000;
+assume(c<=-5);
+assume(c<=0);
+TO: 44001;
+
+FROM: 44001;
+assume(c>=1);
+TO: 44000;
+
+FROM: 44001;
+assume(c<=0);
+TO: 44001;

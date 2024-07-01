@@ -1,0 +1,151 @@
+START: 1000;
+BUCHI: {1000, 20000, 7000, 33000};
+CUTPOINT: {33001, 7000, 33000, 1000, 7001, 20001, 20000};
+PRE: {i>=-64 && i<=63 && j>=-64 && j<=63 };
+
+
+FROM: 1000;
+assume(i>=-4);
+i := 0;
+j := 5 * 1;
+TO: 7000;
+
+FROM: 1000;
+assume(i<=-5);
+assume(i<=0);
+i := 0;
+j := 5 * 1;
+TO: 7001;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * i>=0);
+assume(i>=-4);
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7000;
+assume(99 * 1  +  -1 * i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * i>=0);
+assume(i>=1);
+i := 1  +  i;
+j := j;
+TO: 7000;
+
+FROM: 7001;
+assume(99 * 1  +  -1 * i>=0);
+assume(i<=0);
+i := 1  +  i;
+j := j;
+TO: 7001;
+
+FROM: 7000;
+assume(-100 * 1  +  i>=0);
+assume(i>=-4);
+i := i;
+j := j;
+TO: 20000;
+
+FROM: 7000;
+assume(-100 * 1  +  i>=0);
+assume(i<=-5);
+assume(i<=0);
+i := i;
+j := j;
+TO: 20001;
+
+FROM: 7001;
+assume(-100 * 1  +  i>=0);
+assume(i>=1);
+i := i;
+j := j;
+TO: 20000;
+
+FROM: 7001;
+assume(-100 * 1  +  i>=0);
+assume(i<=0);
+i := i;
+j := j;
+TO: 20001;
+
+FROM: 20000;
+assume(20 * 1  +  -1 * j>=0);
+assume(i>=-4);
+i := i;
+j := 3 * 1  +  j;
+TO: 20000;
+
+FROM: 20000;
+assume(20 * 1  +  -1 * j>=0);
+assume(i<=-5);
+assume(i<=0);
+i := i;
+j := 3 * 1  +  j;
+TO: 20001;
+
+FROM: 20001;
+assume(20 * 1  +  -1 * j>=0);
+assume(i>=1);
+i := i;
+j := 3 * 1  +  j;
+TO: 20000;
+
+FROM: 20001;
+assume(20 * 1  +  -1 * j>=0);
+assume(i<=0);
+i := i;
+j := 3 * 1  +  j;
+TO: 20001;
+
+FROM: 20000;
+assume(-21 * 1  +  j>=0);
+assume(i>=-4);
+i := i;
+j := j;
+TO: 33000;
+
+FROM: 20000;
+assume(-21 * 1  +  j>=0);
+assume(i<=-5);
+assume(i<=0);
+i := i;
+j := j;
+TO: 33001;
+
+FROM: 20001;
+assume(-21 * 1  +  j>=0);
+assume(i>=1);
+i := i;
+j := j;
+TO: 33000;
+
+FROM: 20001;
+assume(-21 * 1  +  j>=0);
+assume(i<=0);
+i := i;
+j := j;
+TO: 33001;
+
+FROM: 33000;
+assume(i>=-4);
+TO: 33000;
+
+FROM: 33000;
+assume(i<=-5);
+assume(i<=0);
+TO: 33001;
+
+FROM: 33001;
+assume(i>=1);
+TO: 33000;
+
+FROM: 33001;
+assume(i<=0);
+TO: 33001;
